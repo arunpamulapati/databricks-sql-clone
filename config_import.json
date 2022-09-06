@@ -1,8 +1,8 @@
 {
   "targets": [
     {
-      "url": "https://yourtargetdb.cloud.databricks.com",
-      "endpoint_id":"xxxxxxxxx",
+      "url": "Databricks workspace URL",
+      "endpoint_id":"DW endpoint id",
       "permissions":[
         {
           "group_name": "users",
