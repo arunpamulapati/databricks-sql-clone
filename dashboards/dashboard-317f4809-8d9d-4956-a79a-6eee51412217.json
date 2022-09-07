@@ -41,7 +41,15 @@
                     "description": "",
                     "isHidden": false,
                     "overrideColors": false,
-                    "parameterMappings": {},
+                    "parameterMappings": {
+                        "workspaceid": {
+                            "mapTo": "workspaceid",
+                            "name": "workspaceid",
+                            "title": "Select a workspace",
+                            "type": "dashboard-level",
+                            "value": null
+                        }
+                    },
                     "position": {
                         "autoHeight": false,
                         "col": 0,
@@ -56,7 +64,7 @@
                     "title": "Databases"
                 },
                 "text": "",
-                "updated_at": "2022-07-20T14:41:27Z",
+                "updated_at": "2022-09-07T20:23:15Z",
                 "visualization": {
                     "created_at": "2022-07-20T14:41:11Z",
                     "description": "",
@@ -80,21 +88,36 @@
                         "id": "fea54078-2986-4688-932e-17f2b8f7220c",
                         "is_draft": false,
                         "is_safe": true,
-                        "name": "WS_Stats",
+                        "name": "workspace_stats",
                         "options": {
                             "apply_auto_limit": true,
-                            "parameters": [],
+                            "parameters": [
+                                {
+                                    "$$value": "1657683783405196",
+                                    "global": false,
+                                    "locals": [],
+                                    "name": "workspaceid",
+                                    "parentQueryId": "fea54078-2986-4688-932e-17f2b8f7220c",
+                                    "queryId": "07b9f7cc-acfd-4409-977d-b8f1e9527ca7",
+                                    "title": "workspaceid",
+                                    "type": "query",
+                                    "urlPrefix": "p_",
+                                    "value": "1657683783405196"
+                                }
+                            ],
                             "run_as_role": "viewer",
-                            "visualization_control_order": []
+                            "visualization_control_order": [
+                                "workspaceid"
+                            ]
                         },
-                        "query": "SELECT\n  name,\n  value.value\nFROM\n  security_analysis.account_info\nwhere\n  category = 'Workspace Stats'\n  and run_id = (\n    select\n      max(runID)\n    from\n      security_analysis.run_number_table\n  )\nORDER BY name",
+                        "query": "SELECT\n  name,\n  value.value\nFROM\n  security_analysis.account_info\nwhere\n  category = 'Workspace Stats'\n  and run_id = (\n    select\n      max(runID)\n    from\n      security_analysis.run_number_table\n  )\n  and workspaceid ={{workspaceid}}\nORDER BY name",
                         "run_as_role": "viewer",
                         "run_as_service_principal_id": null,
                         "schedule": null,
                         "tags": [
                             "SAT"
                         ],
-                        "updated_at": "2022-09-05T00:33:44Z",
+                        "updated_at": "2022-09-07T20:11:52Z",
                         "user_id": 6132399981223669,
                         "version": 1
                     },
@@ -112,7 +135,15 @@
                     "description": "",
                     "isHidden": false,
                     "overrideColors": false,
-                    "parameterMappings": {},
+                    "parameterMappings": {
+                        "workspaceid": {
+                            "mapTo": "workspaceid",
+                            "name": "workspaceid",
+                            "title": "Select a workspace",
+                            "type": "dashboard-level",
+                            "value": null
+                        }
+                    },
                     "position": {
                         "autoHeight": false,
                         "col": 2,
@@ -127,7 +158,7 @@
                     "title": "User Groups"
                 },
                 "text": "",
-                "updated_at": "2022-07-20T14:41:28Z",
+                "updated_at": "2022-09-07T20:23:15Z",
                 "visualization": {
                     "created_at": "2022-07-20T14:41:11Z",
                     "description": "",
@@ -151,21 +182,36 @@
                         "id": "fea54078-2986-4688-932e-17f2b8f7220c",
                         "is_draft": false,
                         "is_safe": true,
-                        "name": "WS_Stats",
+                        "name": "workspace_stats",
                         "options": {
                             "apply_auto_limit": true,
-                            "parameters": [],
+                            "parameters": [
+                                {
+                                    "$$value": "1657683783405196",
+                                    "global": false,
+                                    "locals": [],
+                                    "name": "workspaceid",
+                                    "parentQueryId": "fea54078-2986-4688-932e-17f2b8f7220c",
+                                    "queryId": "07b9f7cc-acfd-4409-977d-b8f1e9527ca7",
+                                    "title": "workspaceid",
+                                    "type": "query",
+                                    "urlPrefix": "p_",
+                                    "value": "1657683783405196"
+                                }
+                            ],
                             "run_as_role": "viewer",
-                            "visualization_control_order": []
+                            "visualization_control_order": [
+                                "workspaceid"
+                            ]
                         },
-                        "query": "SELECT\n  name,\n  value.value\nFROM\n  security_analysis.account_info\nwhere\n  category = 'Workspace Stats'\n  and run_id = (\n    select\n      max(runID)\n    from\n      security_analysis.run_number_table\n  )\nORDER BY name",
+                        "query": "SELECT\n  name,\n  value.value\nFROM\n  security_analysis.account_info\nwhere\n  category = 'Workspace Stats'\n  and run_id = (\n    select\n      max(runID)\n    from\n      security_analysis.run_number_table\n  )\n  and workspaceid ={{workspaceid}}\nORDER BY name",
                         "run_as_role": "viewer",
                         "run_as_service_principal_id": null,
                         "schedule": null,
                         "tags": [
                             "SAT"
                         ],
-                        "updated_at": "2022-09-05T00:33:44Z",
+                        "updated_at": "2022-09-07T20:11:52Z",
                         "user_id": 6132399981223669,
                         "version": 1
                     },
@@ -183,7 +229,15 @@
                     "description": "",
                     "isHidden": false,
                     "overrideColors": false,
-                    "parameterMappings": {},
+                    "parameterMappings": {
+                        "workspaceid": {
+                            "mapTo": "workspaceid",
+                            "name": "workspaceid",
+                            "title": "Select a workspace",
+                            "type": "dashboard-level",
+                            "value": null
+                        }
+                    },
                     "position": {
                         "autoHeight": false,
                         "col": 1,
@@ -198,7 +252,7 @@
                     "title": "Tables"
                 },
                 "text": "",
-                "updated_at": "2022-07-20T14:41:28Z",
+                "updated_at": "2022-09-07T20:23:15Z",
                 "visualization": {
                     "created_at": "2022-07-20T14:41:13Z",
                     "description": "",
@@ -222,21 +276,36 @@
                         "id": "fea54078-2986-4688-932e-17f2b8f7220c",
                         "is_draft": false,
                         "is_safe": true,
-                        "name": "WS_Stats",
+                        "name": "workspace_stats",
                         "options": {
                             "apply_auto_limit": true,
-                            "parameters": [],
+                            "parameters": [
+                                {
+                                    "$$value": "1657683783405196",
+                                    "global": false,
+                                    "locals": [],
+                                    "name": "workspaceid",
+                                    "parentQueryId": "fea54078-2986-4688-932e-17f2b8f7220c",
+                                    "queryId": "07b9f7cc-acfd-4409-977d-b8f1e9527ca7",
+                                    "title": "workspaceid",
+                                    "type": "query",
+                                    "urlPrefix": "p_",
+                                    "value": "1657683783405196"
+                                }
+                            ],
                             "run_as_role": "viewer",
-                            "visualization_control_order": []
+                            "visualization_control_order": [
+                                "workspaceid"
+                            ]
                         },
-                        "query": "SELECT\n  name,\n  value.value\nFROM\n  security_analysis.account_info\nwhere\n  category = 'Workspace Stats'\n  and run_id = (\n    select\n      max(runID)\n    from\n      security_analysis.run_number_table\n  )\nORDER BY name",
+                        "query": "SELECT\n  name,\n  value.value\nFROM\n  security_analysis.account_info\nwhere\n  category = 'Workspace Stats'\n  and run_id = (\n    select\n      max(runID)\n    from\n      security_analysis.run_number_table\n  )\n  and workspaceid ={{workspaceid}}\nORDER BY name",
                         "run_as_role": "viewer",
                         "run_as_service_principal_id": null,
                         "schedule": null,
                         "tags": [
                             "SAT"
                         ],
-                        "updated_at": "2022-09-05T00:33:44Z",
+                        "updated_at": "2022-09-07T20:11:52Z",
                         "user_id": 6132399981223669,
                         "version": 1
                     },
@@ -254,7 +323,15 @@
                     "description": "",
                     "isHidden": false,
                     "overrideColors": false,
-                    "parameterMappings": {},
+                    "parameterMappings": {
+                        "workspaceid": {
+                            "mapTo": "workspaceid",
+                            "name": "workspaceid",
+                            "title": "Select a workspace",
+                            "type": "dashboard-level",
+                            "value": null
+                        }
+                    },
                     "position": {
                         "autoHeight": false,
                         "col": 5,
@@ -269,7 +346,7 @@
                     "title": "Notebooks "
                 },
                 "text": "",
-                "updated_at": "2022-08-22T21:10:05Z",
+                "updated_at": "2022-09-07T20:23:15Z",
                 "visualization": {
                     "created_at": "2022-07-20T14:41:10Z",
                     "description": "",
@@ -295,21 +372,36 @@
                         "id": "fea54078-2986-4688-932e-17f2b8f7220c",
                         "is_draft": false,
                         "is_safe": true,
-                        "name": "WS_Stats",
+                        "name": "workspace_stats",
                         "options": {
                             "apply_auto_limit": true,
-                            "parameters": [],
+                            "parameters": [
+                                {
+                                    "$$value": "1657683783405196",
+                                    "global": false,
+                                    "locals": [],
+                                    "name": "workspaceid",
+                                    "parentQueryId": "fea54078-2986-4688-932e-17f2b8f7220c",
+                                    "queryId": "07b9f7cc-acfd-4409-977d-b8f1e9527ca7",
+                                    "title": "workspaceid",
+                                    "type": "query",
+                                    "urlPrefix": "p_",
+                                    "value": "1657683783405196"
+                                }
+                            ],
                             "run_as_role": "viewer",
-                            "visualization_control_order": []
+                            "visualization_control_order": [
+                                "workspaceid"
+                            ]
                         },
-                        "query": "SELECT\n  name,\n  value.value\nFROM\n  security_analysis.account_info\nwhere\n  category = 'Workspace Stats'\n  and run_id = (\n    select\n      max(runID)\n    from\n      security_analysis.run_number_table\n  )\nORDER BY name",
+                        "query": "SELECT\n  name,\n  value.value\nFROM\n  security_analysis.account_info\nwhere\n  category = 'Workspace Stats'\n  and run_id = (\n    select\n      max(runID)\n    from\n      security_analysis.run_number_table\n  )\n  and workspaceid ={{workspaceid}}\nORDER BY name",
                         "run_as_role": "viewer",
                         "run_as_service_principal_id": null,
                         "schedule": null,
                         "tags": [
                             "SAT"
                         ],
-                        "updated_at": "2022-09-05T00:33:44Z",
+                        "updated_at": "2022-09-07T20:11:52Z",
                         "user_id": 6132399981223669,
                         "version": 1
                     },
@@ -327,7 +419,15 @@
                     "description": "",
                     "isHidden": false,
                     "overrideColors": false,
-                    "parameterMappings": {},
+                    "parameterMappings": {
+                        "workspaceid": {
+                            "mapTo": "workspaceid",
+                            "name": "workspaceid",
+                            "title": "Select a workspace",
+                            "type": "dashboard-level",
+                            "value": null
+                        }
+                    },
                     "position": {
                         "autoHeight": false,
                         "col": 4,
@@ -342,7 +442,7 @@
                     "title": "Configured Jobs"
                 },
                 "text": "",
-                "updated_at": "2022-08-22T21:10:05Z",
+                "updated_at": "2022-09-07T20:23:15Z",
                 "visualization": {
                     "created_at": "2022-07-20T14:41:13Z",
                     "description": "",
@@ -366,21 +466,36 @@
                         "id": "fea54078-2986-4688-932e-17f2b8f7220c",
                         "is_draft": false,
                         "is_safe": true,
-                        "name": "WS_Stats",
+                        "name": "workspace_stats",
                         "options": {
                             "apply_auto_limit": true,
-                            "parameters": [],
+                            "parameters": [
+                                {
+                                    "$$value": "1657683783405196",
+                                    "global": false,
+                                    "locals": [],
+                                    "name": "workspaceid",
+                                    "parentQueryId": "fea54078-2986-4688-932e-17f2b8f7220c",
+                                    "queryId": "07b9f7cc-acfd-4409-977d-b8f1e9527ca7",
+                                    "title": "workspaceid",
+                                    "type": "query",
+                                    "urlPrefix": "p_",
+                                    "value": "1657683783405196"
+                                }
+                            ],
                             "run_as_role": "viewer",
-                            "visualization_control_order": []
+                            "visualization_control_order": [
+                                "workspaceid"
+                            ]
                         },
-                        "query": "SELECT\n  name,\n  value.value\nFROM\n  security_analysis.account_info\nwhere\n  category = 'Workspace Stats'\n  and run_id = (\n    select\n      max(runID)\n    from\n      security_analysis.run_number_table\n  )\nORDER BY name",
+                        "query": "SELECT\n  name,\n  value.value\nFROM\n  security_analysis.account_info\nwhere\n  category = 'Workspace Stats'\n  and run_id = (\n    select\n      max(runID)\n    from\n      security_analysis.run_number_table\n  )\n  and workspaceid ={{workspaceid}}\nORDER BY name",
                         "run_as_role": "viewer",
                         "run_as_service_principal_id": null,
                         "schedule": null,
                         "tags": [
                             "SAT"
                         ],
-                        "updated_at": "2022-09-05T00:33:44Z",
+                        "updated_at": "2022-09-07T20:11:52Z",
                         "user_id": 6132399981223669,
                         "version": 1
                     },
@@ -398,7 +513,15 @@
                     "description": "",
                     "isHidden": false,
                     "overrideColors": false,
-                    "parameterMappings": {},
+                    "parameterMappings": {
+                        "workspaceid": {
+                            "mapTo": "workspaceid",
+                            "name": "workspaceid",
+                            "title": "Select a workspace",
+                            "type": "dashboard-level",
+                            "value": null
+                        }
+                    },
                     "position": {
                         "autoHeight": false,
                         "col": 3,
@@ -413,7 +536,7 @@
                     "title": "Configured Users"
                 },
                 "text": "",
-                "updated_at": "2022-07-20T14:41:29Z",
+                "updated_at": "2022-09-07T20:23:15Z",
                 "visualization": {
                     "created_at": "2022-07-20T14:41:13Z",
                     "description": "",
@@ -437,21 +560,36 @@
                         "id": "fea54078-2986-4688-932e-17f2b8f7220c",
                         "is_draft": false,
                         "is_safe": true,
-                        "name": "WS_Stats",
+                        "name": "workspace_stats",
                         "options": {
                             "apply_auto_limit": true,
-                            "parameters": [],
+                            "parameters": [
+                                {
+                                    "$$value": "1657683783405196",
+                                    "global": false,
+                                    "locals": [],
+                                    "name": "workspaceid",
+                                    "parentQueryId": "fea54078-2986-4688-932e-17f2b8f7220c",
+                                    "queryId": "07b9f7cc-acfd-4409-977d-b8f1e9527ca7",
+                                    "title": "workspaceid",
+                                    "type": "query",
+                                    "urlPrefix": "p_",
+                                    "value": "1657683783405196"
+                                }
+                            ],
                             "run_as_role": "viewer",
-                            "visualization_control_order": []
+                            "visualization_control_order": [
+                                "workspaceid"
+                            ]
                         },
-                        "query": "SELECT\n  name,\n  value.value\nFROM\n  security_analysis.account_info\nwhere\n  category = 'Workspace Stats'\n  and run_id = (\n    select\n      max(runID)\n    from\n      security_analysis.run_number_table\n  )\nORDER BY name",
+                        "query": "SELECT\n  name,\n  value.value\nFROM\n  security_analysis.account_info\nwhere\n  category = 'Workspace Stats'\n  and run_id = (\n    select\n      max(runID)\n    from\n      security_analysis.run_number_table\n  )\n  and workspaceid ={{workspaceid}}\nORDER BY name",
                         "run_as_role": "viewer",
                         "run_as_service_principal_id": null,
                         "schedule": null,
                         "tags": [
                             "SAT"
                         ],
-                        "updated_at": "2022-09-05T00:33:44Z",
+                        "updated_at": "2022-09-07T20:11:52Z",
                         "user_id": 6132399981223669,
                         "version": 1
                     },
@@ -568,6 +706,13 @@
                             "title": "",
                             "type": "static-value",
                             "value": "Network Security"
+                        },
+                        "workspaceid": {
+                            "mapTo": "workspaceid",
+                            "name": "workspaceid",
+                            "title": "Select a workspace",
+                            "type": "dashboard-level",
+                            "value": null
                         }
                     },
                     "position": {
@@ -584,7 +729,7 @@
                     "title": "Network Security Summary"
                 },
                 "text": "",
-                "updated_at": "2022-07-20T14:41:31Z",
+                "updated_at": "2022-09-07T20:23:15Z",
                 "visualization": {
                     "created_at": "2022-07-20T14:41:17Z",
                     "description": "",
@@ -825,6 +970,32 @@
                                 "type": "integer",
                                 "useMonospaceFont": false,
                                 "visible": false
+                            },
+                            {
+                                "alignContent": "left",
+                                "allowHTML": false,
+                                "allowSearch": false,
+                                "booleanValues": [
+                                    "false",
+                                    "true"
+                                ],
+                                "displayAs": "string",
+                                "highlightLinks": false,
+                                "imageHeight": "",
+                                "imageTitleTemplate": "{{ @ }}",
+                                "imageUrlTemplate": "{{ @ }}",
+                                "imageWidth": "",
+                                "linkOpenInNewTab": true,
+                                "linkTextTemplate": "{{ @ }}",
+                                "linkTitleTemplate": "{{ @ }}",
+                                "linkUrlTemplate": "{{ @ }}",
+                                "name": "workspaceid",
+                                "order": 100006,
+                                "preserveWhitespace": false,
+                                "title": "workspaceid",
+                                "type": "string",
+                                "useMonospaceFont": false,
+                                "visible": false
                             }
                         ],
                         "condensed": false,
@@ -840,12 +1011,12 @@
                         "id": "b043e97c-a156-4d91-8a65-30bce3b1ad48",
                         "is_draft": false,
                         "is_safe": true,
-                        "name": "Category Pillars",
+                        "name": "category_pillars",
                         "options": {
                             "apply_auto_limit": true,
                             "parameters": [
                                 {
-                                    "$$value": "Compliance",
+                                    "$$value": "Workspace Settings",
                                     "global": false,
                                     "locals": [],
                                     "name": "category",
@@ -853,28 +1024,41 @@
                                     "title": "category",
                                     "type": "text",
                                     "urlPrefix": "p_",
-                                    "value": "Compliance"
+                                    "value": "Workspace Settings"
+                                },
+                                {
+                                    "$$value": "1657683783405196",
+                                    "global": false,
+                                    "locals": [],
+                                    "name": "workspaceid",
+                                    "parentQueryId": "b043e97c-a156-4d91-8a65-30bce3b1ad48",
+                                    "queryId": "07b9f7cc-acfd-4409-977d-b8f1e9527ca7",
+                                    "title": "workspaceid",
+                                    "type": "query",
+                                    "urlPrefix": "p_",
+                                    "value": "1657683783405196"
                                 }
                             ],
                             "run_as_role": "viewer",
                             "visualization_control_order": [
-                                "category"
+                                "category",
+                                "workspaceid"
                             ]
                         },
-                        "query": "SELECT\n  check as Check,\n  BP.severity as Severity,\n  score as Status,\n  chk_date as RunDate,\n  concat(\n    '<a  href=\"',\n    BP.doc_url,\n    '\" target=\"_blank\" rel=\"noopener noreferrer\" title=\"remediation documentation\">',\n    BP.recommendation,\n    '</a>'\n  ) as Recommendation,\n  CASE\n    WHEN BP.severity = 'High' THEN 3\n    WHEN BP.severity = 'Medium' THEN 2\n    ELSE 1\n  END as ord\nFROM\n  (\n    SELECT\n      chk_name,\n      score,\n      chk_date\n    FROM\n      security_analysis.security_checks\n    where\n      run_id = (\n        select\n          max(runID)\n        from\n          security_analysis.run_number_table\n      )\n  ) SC,\n  security_analysis.security_best_practices BP\nWHERE\n  SC.chk_name = BP.chk_name\n  and BP.category = {{category}}\nORDER BY\n  Status DESC,\n  ord DESC",
+                        "query": "SELECT\n  check as Check,\n  BP.severity as Severity,\n  score as Status,\n  chk_date as RunDate,\n  concat(\n    '<a  href=\"',\n    BP.doc_url,\n    '\" target=\"_blank\" rel=\"noopener noreferrer\" title=\"remediation documentation\">',\n    BP.recommendation,\n    '</a>'\n  ) as Recommendation,\n  CASE\n    WHEN BP.severity = 'High' THEN 3\n    WHEN BP.severity = 'Medium' THEN 2\n    ELSE 1\n  END as ord,\n  workspaceid\nFROM\n  (\n    SELECT\n      chk_name,\n      score,\n      chk_date,\n      workspaceid\n    FROM\n      security_analysis.security_checks\n    where\n      run_id = (\n        select\n          max(runID)\n        from\n          security_analysis.run_number_table\n      )\n  ) SC,\n  security_analysis.security_best_practices BP\nWHERE\n  SC.chk_name = BP.chk_name\n  and BP.category = {{category}}\n  and workspaceid ={{workspaceid}}\nORDER BY\n  Status DESC,\n  ord DESC",
                         "run_as_role": "viewer",
                         "run_as_service_principal_id": null,
                         "schedule": null,
                         "tags": [
                             "SAT"
                         ],
-                        "updated_at": "2022-09-05T00:27:54Z",
+                        "updated_at": "2022-09-07T18:18:36Z",
                         "user_id": 6132399981223669,
                         "version": 1
                     },
                     "query_plan": null,
                     "type": "TABLE",
-                    "updated_at": "2022-08-11T19:47:09Z"
+                    "updated_at": "2022-09-07T17:53:31Z"
                 },
                 "width": 1
             },
@@ -885,6 +1069,7 @@
                 "options": {
                     "description": "",
                     "isHidden": false,
+                    "overrideColors": false,
                     "parameterMappings": {
                         "category": {
                             "mapTo": "category",
@@ -899,6 +1084,13 @@
                             "title": "",
                             "type": "static-value",
                             "value": "High"
+                        },
+                        "workspaceid": {
+                            "mapTo": "workspaceid",
+                            "name": "workspaceid",
+                            "title": "Select a workspace",
+                            "type": "dashboard-level",
+                            "value": null
                         }
                     },
                     "position": {
@@ -915,7 +1107,7 @@
                     "title": "High"
                 },
                 "text": "",
-                "updated_at": "2022-07-20T14:41:32Z",
+                "updated_at": "2022-09-07T20:23:15Z",
                 "visualization": {
                     "created_at": "2022-07-20T14:41:20Z",
                     "description": "",
@@ -939,12 +1131,12 @@
                         "id": "6c11756d-132f-4727-92df-2a085ef2a204",
                         "is_draft": false,
                         "is_safe": true,
-                        "name": "Category Counters",
+                        "name": "category_counters",
                         "options": {
                             "apply_auto_limit": true,
                             "parameters": [
                                 {
-                                    "$$value": "High",
+                                    "$$value": "Low",
                                     "global": false,
                                     "locals": [],
                                     "name": "severity",
@@ -952,7 +1144,7 @@
                                     "title": "severity",
                                     "type": "text",
                                     "urlPrefix": "p_",
-                                    "value": "High"
+                                    "value": "Low"
                                 },
                                 {
                                     "$$value": "Identity & Access",
@@ -964,22 +1156,34 @@
                                     "type": "text",
                                     "urlPrefix": "p_",
                                     "value": "Identity & Access"
+                                },
+                                {
+                                    "$$value": "1657683783405196",
+                                    "global": false,
+                                    "locals": [],
+                                    "name": "workspaceid",
+                                    "queryId": "07b9f7cc-acfd-4409-977d-b8f1e9527ca7",
+                                    "title": "Workspace",
+                                    "type": "query",
+                                    "urlPrefix": "p_",
+                                    "value": "1657683783405196"
                                 }
                             ],
                             "run_as_role": "viewer",
                             "visualization_control_order": [
                                 "severity",
-                                "category"
+                                "category",
+                                "workspaceid"
                             ]
                         },
-                        "query": "SELECT\n  count(*) as counter\nFROM\n  security_analysis.security_checks sc,\n  security_analysis.security_best_practices sbp\nwhere\n  sc.chk_name = sbp.chk_name\n  and sbp.severity = {{severity}}\n  and sc.score = 1\n  and sbp.category = {{category}}\n  and run_id = (\n    select\n      max(runID)\n    from\n      security_analysis.run_number_table\n  )",
+                        "query": "SELECT\n  count(*) as counter\nFROM\n  security_analysis.security_checks sc,\n  security_analysis.security_best_practices sbp\nwhere\n  sc.chk_name = sbp.chk_name\n  and sbp.severity = {{severity}}\n  and sc.score = 1\n  and sbp.category = {{category}}\n  and sc.workspaceid = {{workspaceid}}\n  and run_id = (\n    select\n      max(runID)\n    from\n      security_analysis.run_number_table\n  )",
                         "run_as_role": "viewer",
                         "run_as_service_principal_id": null,
                         "schedule": null,
                         "tags": [
                             "SAT"
                         ],
-                        "updated_at": "2022-09-05T00:23:34Z",
+                        "updated_at": "2022-09-07T18:47:11Z",
                         "user_id": 6132399981223669,
                         "version": 1
                     },
@@ -996,6 +1200,7 @@
                 "options": {
                     "description": "",
                     "isHidden": false,
+                    "overrideColors": false,
                     "parameterMappings": {
                         "category": {
                             "mapTo": "category",
@@ -1010,6 +1215,13 @@
                             "title": "",
                             "type": "static-value",
                             "value": "Medium"
+                        },
+                        "workspaceid": {
+                            "mapTo": "workspaceid",
+                            "name": "workspaceid",
+                            "title": "Select a workspace",
+                            "type": "dashboard-level",
+                            "value": null
                         }
                     },
                     "position": {
@@ -1026,7 +1238,7 @@
                     "title": "Medium"
                 },
                 "text": "",
-                "updated_at": "2022-07-20T14:41:32Z",
+                "updated_at": "2022-09-07T20:23:16Z",
                 "visualization": {
                     "created_at": "2022-07-20T14:41:20Z",
                     "description": "",
@@ -1050,12 +1262,12 @@
                         "id": "6c11756d-132f-4727-92df-2a085ef2a204",
                         "is_draft": false,
                         "is_safe": true,
-                        "name": "Category Counters",
+                        "name": "category_counters",
                         "options": {
                             "apply_auto_limit": true,
                             "parameters": [
                                 {
-                                    "$$value": "High",
+                                    "$$value": "Low",
                                     "global": false,
                                     "locals": [],
                                     "name": "severity",
@@ -1063,7 +1275,7 @@
                                     "title": "severity",
                                     "type": "text",
                                     "urlPrefix": "p_",
-                                    "value": "High"
+                                    "value": "Low"
                                 },
                                 {
                                     "$$value": "Identity & Access",
@@ -1075,22 +1287,34 @@
                                     "type": "text",
                                     "urlPrefix": "p_",
                                     "value": "Identity & Access"
+                                },
+                                {
+                                    "$$value": "1657683783405196",
+                                    "global": false,
+                                    "locals": [],
+                                    "name": "workspaceid",
+                                    "queryId": "07b9f7cc-acfd-4409-977d-b8f1e9527ca7",
+                                    "title": "Workspace",
+                                    "type": "query",
+                                    "urlPrefix": "p_",
+                                    "value": "1657683783405196"
                                 }
                             ],
                             "run_as_role": "viewer",
                             "visualization_control_order": [
                                 "severity",
-                                "category"
+                                "category",
+                                "workspaceid"
                             ]
                         },
-                        "query": "SELECT\n  count(*) as counter\nFROM\n  security_analysis.security_checks sc,\n  security_analysis.security_best_practices sbp\nwhere\n  sc.chk_name = sbp.chk_name\n  and sbp.severity = {{severity}}\n  and sc.score = 1\n  and sbp.category = {{category}}\n  and run_id = (\n    select\n      max(runID)\n    from\n      security_analysis.run_number_table\n  )",
+                        "query": "SELECT\n  count(*) as counter\nFROM\n  security_analysis.security_checks sc,\n  security_analysis.security_best_practices sbp\nwhere\n  sc.chk_name = sbp.chk_name\n  and sbp.severity = {{severity}}\n  and sc.score = 1\n  and sbp.category = {{category}}\n  and sc.workspaceid = {{workspaceid}}\n  and run_id = (\n    select\n      max(runID)\n    from\n      security_analysis.run_number_table\n  )",
                         "run_as_role": "viewer",
                         "run_as_service_principal_id": null,
                         "schedule": null,
                         "tags": [
                             "SAT"
                         ],
-                        "updated_at": "2022-09-05T00:23:34Z",
+                        "updated_at": "2022-09-07T18:47:11Z",
                         "user_id": 6132399981223669,
                         "version": 1
                     },
@@ -1107,6 +1331,7 @@
                 "options": {
                     "description": "",
                     "isHidden": false,
+                    "overrideColors": false,
                     "parameterMappings": {
                         "category": {
                             "mapTo": "category",
@@ -1121,6 +1346,13 @@
                             "title": "",
                             "type": "static-value",
                             "value": "Low"
+                        },
+                        "workspaceid": {
+                            "mapTo": "workspaceid",
+                            "name": "workspaceid",
+                            "title": "Select a workspace",
+                            "type": "dashboard-level",
+                            "value": null
                         }
                     },
                     "position": {
@@ -1137,7 +1369,7 @@
                     "title": "Low"
                 },
                 "text": "",
-                "updated_at": "2022-07-20T14:41:32Z",
+                "updated_at": "2022-09-07T20:23:15Z",
                 "visualization": {
                     "created_at": "2022-07-20T14:41:20Z",
                     "description": "",
@@ -1161,12 +1393,12 @@
                         "id": "6c11756d-132f-4727-92df-2a085ef2a204",
                         "is_draft": false,
                         "is_safe": true,
-                        "name": "Category Counters",
+                        "name": "category_counters",
                         "options": {
                             "apply_auto_limit": true,
                             "parameters": [
                                 {
-                                    "$$value": "High",
+                                    "$$value": "Low",
                                     "global": false,
                                     "locals": [],
                                     "name": "severity",
@@ -1174,7 +1406,7 @@
                                     "title": "severity",
                                     "type": "text",
                                     "urlPrefix": "p_",
-                                    "value": "High"
+                                    "value": "Low"
                                 },
                                 {
                                     "$$value": "Identity & Access",
@@ -1186,22 +1418,34 @@
                                     "type": "text",
                                     "urlPrefix": "p_",
                                     "value": "Identity & Access"
+                                },
+                                {
+                                    "$$value": "1657683783405196",
+                                    "global": false,
+                                    "locals": [],
+                                    "name": "workspaceid",
+                                    "queryId": "07b9f7cc-acfd-4409-977d-b8f1e9527ca7",
+                                    "title": "Workspace",
+                                    "type": "query",
+                                    "urlPrefix": "p_",
+                                    "value": "1657683783405196"
                                 }
                             ],
                             "run_as_role": "viewer",
                             "visualization_control_order": [
                                 "severity",
-                                "category"
+                                "category",
+                                "workspaceid"
                             ]
                         },
-                        "query": "SELECT\n  count(*) as counter\nFROM\n  security_analysis.security_checks sc,\n  security_analysis.security_best_practices sbp\nwhere\n  sc.chk_name = sbp.chk_name\n  and sbp.severity = {{severity}}\n  and sc.score = 1\n  and sbp.category = {{category}}\n  and run_id = (\n    select\n      max(runID)\n    from\n      security_analysis.run_number_table\n  )",
+                        "query": "SELECT\n  count(*) as counter\nFROM\n  security_analysis.security_checks sc,\n  security_analysis.security_best_practices sbp\nwhere\n  sc.chk_name = sbp.chk_name\n  and sbp.severity = {{severity}}\n  and sc.score = 1\n  and sbp.category = {{category}}\n  and sc.workspaceid = {{workspaceid}}\n  and run_id = (\n    select\n      max(runID)\n    from\n      security_analysis.run_number_table\n  )",
                         "run_as_role": "viewer",
                         "run_as_service_principal_id": null,
                         "schedule": null,
                         "tags": [
                             "SAT"
                         ],
-                        "updated_at": "2022-09-05T00:23:34Z",
+                        "updated_at": "2022-09-07T18:47:11Z",
                         "user_id": 6132399981223669,
                         "version": 1
                     },
@@ -1218,6 +1462,7 @@
                 "options": {
                     "description": "",
                     "isHidden": false,
+                    "overrideColors": false,
                     "parameterMappings": {
                         "category": {
                             "mapTo": "category",
@@ -1232,6 +1477,13 @@
                             "title": "",
                             "type": "static-value",
                             "value": "High"
+                        },
+                        "workspaceid": {
+                            "mapTo": "workspaceid",
+                            "name": "workspaceid",
+                            "title": "Select a workspace",
+                            "type": "dashboard-level",
+                            "value": null
                         }
                     },
                     "position": {
@@ -1248,7 +1500,7 @@
                     "title": "High"
                 },
                 "text": "",
-                "updated_at": "2022-07-20T14:41:33Z",
+                "updated_at": "2022-09-07T20:23:15Z",
                 "visualization": {
                     "created_at": "2022-07-20T14:41:20Z",
                     "description": "",
@@ -1272,12 +1524,12 @@
                         "id": "6c11756d-132f-4727-92df-2a085ef2a204",
                         "is_draft": false,
                         "is_safe": true,
-                        "name": "Category Counters",
+                        "name": "category_counters",
                         "options": {
                             "apply_auto_limit": true,
                             "parameters": [
                                 {
-                                    "$$value": "High",
+                                    "$$value": "Low",
                                     "global": false,
                                     "locals": [],
                                     "name": "severity",
@@ -1285,7 +1537,7 @@
                                     "title": "severity",
                                     "type": "text",
                                     "urlPrefix": "p_",
-                                    "value": "High"
+                                    "value": "Low"
                                 },
                                 {
                                     "$$value": "Identity & Access",
@@ -1297,22 +1549,34 @@
                                     "type": "text",
                                     "urlPrefix": "p_",
                                     "value": "Identity & Access"
+                                },
+                                {
+                                    "$$value": "1657683783405196",
+                                    "global": false,
+                                    "locals": [],
+                                    "name": "workspaceid",
+                                    "queryId": "07b9f7cc-acfd-4409-977d-b8f1e9527ca7",
+                                    "title": "Workspace",
+                                    "type": "query",
+                                    "urlPrefix": "p_",
+                                    "value": "1657683783405196"
                                 }
                             ],
                             "run_as_role": "viewer",
                             "visualization_control_order": [
                                 "severity",
-                                "category"
+                                "category",
+                                "workspaceid"
                             ]
                         },
-                        "query": "SELECT\n  count(*) as counter\nFROM\n  security_analysis.security_checks sc,\n  security_analysis.security_best_practices sbp\nwhere\n  sc.chk_name = sbp.chk_name\n  and sbp.severity = {{severity}}\n  and sc.score = 1\n  and sbp.category = {{category}}\n  and run_id = (\n    select\n      max(runID)\n    from\n      security_analysis.run_number_table\n  )",
+                        "query": "SELECT\n  count(*) as counter\nFROM\n  security_analysis.security_checks sc,\n  security_analysis.security_best_practices sbp\nwhere\n  sc.chk_name = sbp.chk_name\n  and sbp.severity = {{severity}}\n  and sc.score = 1\n  and sbp.category = {{category}}\n  and sc.workspaceid = {{workspaceid}}\n  and run_id = (\n    select\n      max(runID)\n    from\n      security_analysis.run_number_table\n  )",
                         "run_as_role": "viewer",
                         "run_as_service_principal_id": null,
                         "schedule": null,
                         "tags": [
                             "SAT"
                         ],
-                        "updated_at": "2022-09-05T00:23:34Z",
+                        "updated_at": "2022-09-07T18:47:11Z",
                         "user_id": 6132399981223669,
                         "version": 1
                     },
@@ -1329,6 +1593,7 @@
                 "options": {
                     "description": "",
                     "isHidden": false,
+                    "overrideColors": false,
                     "parameterMappings": {
                         "category": {
                             "mapTo": "category",
@@ -1343,6 +1608,13 @@
                             "title": "",
                             "type": "static-value",
                             "value": "Medium"
+                        },
+                        "workspaceid": {
+                            "mapTo": "workspaceid",
+                            "name": "workspaceid",
+                            "title": "Select a workspace",
+                            "type": "dashboard-level",
+                            "value": null
                         }
                     },
                     "position": {
@@ -1359,7 +1631,7 @@
                     "title": "Medium"
                 },
                 "text": "",
-                "updated_at": "2022-07-20T14:41:33Z",
+                "updated_at": "2022-09-07T20:23:15Z",
                 "visualization": {
                     "created_at": "2022-07-20T14:41:20Z",
                     "description": "",
@@ -1383,12 +1655,12 @@
                         "id": "6c11756d-132f-4727-92df-2a085ef2a204",
                         "is_draft": false,
                         "is_safe": true,
-                        "name": "Category Counters",
+                        "name": "category_counters",
                         "options": {
                             "apply_auto_limit": true,
                             "parameters": [
                                 {
-                                    "$$value": "High",
+                                    "$$value": "Low",
                                     "global": false,
                                     "locals": [],
                                     "name": "severity",
@@ -1396,7 +1668,7 @@
                                     "title": "severity",
                                     "type": "text",
                                     "urlPrefix": "p_",
-                                    "value": "High"
+                                    "value": "Low"
                                 },
                                 {
                                     "$$value": "Identity & Access",
@@ -1408,22 +1680,34 @@
                                     "type": "text",
                                     "urlPrefix": "p_",
                                     "value": "Identity & Access"
+                                },
+                                {
+                                    "$$value": "1657683783405196",
+                                    "global": false,
+                                    "locals": [],
+                                    "name": "workspaceid",
+                                    "queryId": "07b9f7cc-acfd-4409-977d-b8f1e9527ca7",
+                                    "title": "Workspace",
+                                    "type": "query",
+                                    "urlPrefix": "p_",
+                                    "value": "1657683783405196"
                                 }
                             ],
                             "run_as_role": "viewer",
                             "visualization_control_order": [
                                 "severity",
-                                "category"
+                                "category",
+                                "workspaceid"
                             ]
                         },
-                        "query": "SELECT\n  count(*) as counter\nFROM\n  security_analysis.security_checks sc,\n  security_analysis.security_best_practices sbp\nwhere\n  sc.chk_name = sbp.chk_name\n  and sbp.severity = {{severity}}\n  and sc.score = 1\n  and sbp.category = {{category}}\n  and run_id = (\n    select\n      max(runID)\n    from\n      security_analysis.run_number_table\n  )",
+                        "query": "SELECT\n  count(*) as counter\nFROM\n  security_analysis.security_checks sc,\n  security_analysis.security_best_practices sbp\nwhere\n  sc.chk_name = sbp.chk_name\n  and sbp.severity = {{severity}}\n  and sc.score = 1\n  and sbp.category = {{category}}\n  and sc.workspaceid = {{workspaceid}}\n  and run_id = (\n    select\n      max(runID)\n    from\n      security_analysis.run_number_table\n  )",
                         "run_as_role": "viewer",
                         "run_as_service_principal_id": null,
                         "schedule": null,
                         "tags": [
                             "SAT"
                         ],
-                        "updated_at": "2022-09-05T00:23:34Z",
+                        "updated_at": "2022-09-07T18:47:11Z",
                         "user_id": 6132399981223669,
                         "version": 1
                     },
@@ -1440,6 +1724,7 @@
                 "options": {
                     "description": "",
                     "isHidden": false,
+                    "overrideColors": false,
                     "parameterMappings": {
                         "category": {
                             "mapTo": "category",
@@ -1454,6 +1739,13 @@
                             "title": "",
                             "type": "static-value",
                             "value": "Medium"
+                        },
+                        "workspaceid": {
+                            "mapTo": "workspaceid",
+                            "name": "workspaceid",
+                            "title": "Select a workspace",
+                            "type": "dashboard-level",
+                            "value": null
                         }
                     },
                     "position": {
@@ -1470,7 +1762,7 @@
                     "title": "Medium"
                 },
                 "text": "",
-                "updated_at": "2022-07-20T14:41:34Z",
+                "updated_at": "2022-09-07T20:23:15Z",
                 "visualization": {
                     "created_at": "2022-07-20T14:41:20Z",
                     "description": "",
@@ -1494,12 +1786,12 @@
                         "id": "6c11756d-132f-4727-92df-2a085ef2a204",
                         "is_draft": false,
                         "is_safe": true,
-                        "name": "Category Counters",
+                        "name": "category_counters",
                         "options": {
                             "apply_auto_limit": true,
                             "parameters": [
                                 {
-                                    "$$value": "High",
+                                    "$$value": "Low",
                                     "global": false,
                                     "locals": [],
                                     "name": "severity",
@@ -1507,7 +1799,7 @@
                                     "title": "severity",
                                     "type": "text",
                                     "urlPrefix": "p_",
-                                    "value": "High"
+                                    "value": "Low"
                                 },
                                 {
                                     "$$value": "Identity & Access",
@@ -1519,22 +1811,34 @@
                                     "type": "text",
                                     "urlPrefix": "p_",
                                     "value": "Identity & Access"
+                                },
+                                {
+                                    "$$value": "1657683783405196",
+                                    "global": false,
+                                    "locals": [],
+                                    "name": "workspaceid",
+                                    "queryId": "07b9f7cc-acfd-4409-977d-b8f1e9527ca7",
+                                    "title": "Workspace",
+                                    "type": "query",
+                                    "urlPrefix": "p_",
+                                    "value": "1657683783405196"
                                 }
                             ],
                             "run_as_role": "viewer",
                             "visualization_control_order": [
                                 "severity",
-                                "category"
+                                "category",
+                                "workspaceid"
                             ]
                         },
-                        "query": "SELECT\n  count(*) as counter\nFROM\n  security_analysis.security_checks sc,\n  security_analysis.security_best_practices sbp\nwhere\n  sc.chk_name = sbp.chk_name\n  and sbp.severity = {{severity}}\n  and sc.score = 1\n  and sbp.category = {{category}}\n  and run_id = (\n    select\n      max(runID)\n    from\n      security_analysis.run_number_table\n  )",
+                        "query": "SELECT\n  count(*) as counter\nFROM\n  security_analysis.security_checks sc,\n  security_analysis.security_best_practices sbp\nwhere\n  sc.chk_name = sbp.chk_name\n  and sbp.severity = {{severity}}\n  and sc.score = 1\n  and sbp.category = {{category}}\n  and sc.workspaceid = {{workspaceid}}\n  and run_id = (\n    select\n      max(runID)\n    from\n      security_analysis.run_number_table\n  )",
                         "run_as_role": "viewer",
                         "run_as_service_principal_id": null,
                         "schedule": null,
                         "tags": [
                             "SAT"
                         ],
-                        "updated_at": "2022-09-05T00:23:34Z",
+                        "updated_at": "2022-09-07T18:47:11Z",
                         "user_id": 6132399981223669,
                         "version": 1
                     },
@@ -1551,6 +1855,7 @@
                 "options": {
                     "description": "",
                     "isHidden": false,
+                    "overrideColors": false,
                     "parameterMappings": {
                         "category": {
                             "mapTo": "category",
@@ -1565,6 +1870,13 @@
                             "title": "",
                             "type": "static-value",
                             "value": "High"
+                        },
+                        "workspaceid": {
+                            "mapTo": "workspaceid",
+                            "name": "workspaceid",
+                            "title": "Select a workspace",
+                            "type": "dashboard-level",
+                            "value": null
                         }
                     },
                     "position": {
@@ -1581,7 +1893,7 @@
                     "title": "High"
                 },
                 "text": "",
-                "updated_at": "2022-07-20T14:41:34Z",
+                "updated_at": "2022-09-07T20:23:15Z",
                 "visualization": {
                     "created_at": "2022-07-20T14:41:20Z",
                     "description": "",
@@ -1605,12 +1917,12 @@
                         "id": "6c11756d-132f-4727-92df-2a085ef2a204",
                         "is_draft": false,
                         "is_safe": true,
-                        "name": "Category Counters",
+                        "name": "category_counters",
                         "options": {
                             "apply_auto_limit": true,
                             "parameters": [
                                 {
-                                    "$$value": "High",
+                                    "$$value": "Low",
                                     "global": false,
                                     "locals": [],
                                     "name": "severity",
@@ -1618,7 +1930,7 @@
                                     "title": "severity",
                                     "type": "text",
                                     "urlPrefix": "p_",
-                                    "value": "High"
+                                    "value": "Low"
                                 },
                                 {
                                     "$$value": "Identity & Access",
@@ -1630,22 +1942,34 @@
                                     "type": "text",
                                     "urlPrefix": "p_",
                                     "value": "Identity & Access"
+                                },
+                                {
+                                    "$$value": "1657683783405196",
+                                    "global": false,
+                                    "locals": [],
+                                    "name": "workspaceid",
+                                    "queryId": "07b9f7cc-acfd-4409-977d-b8f1e9527ca7",
+                                    "title": "Workspace",
+                                    "type": "query",
+                                    "urlPrefix": "p_",
+                                    "value": "1657683783405196"
                                 }
                             ],
                             "run_as_role": "viewer",
                             "visualization_control_order": [
                                 "severity",
-                                "category"
+                                "category",
+                                "workspaceid"
                             ]
                         },
-                        "query": "SELECT\n  count(*) as counter\nFROM\n  security_analysis.security_checks sc,\n  security_analysis.security_best_practices sbp\nwhere\n  sc.chk_name = sbp.chk_name\n  and sbp.severity = {{severity}}\n  and sc.score = 1\n  and sbp.category = {{category}}\n  and run_id = (\n    select\n      max(runID)\n    from\n      security_analysis.run_number_table\n  )",
+                        "query": "SELECT\n  count(*) as counter\nFROM\n  security_analysis.security_checks sc,\n  security_analysis.security_best_practices sbp\nwhere\n  sc.chk_name = sbp.chk_name\n  and sbp.severity = {{severity}}\n  and sc.score = 1\n  and sbp.category = {{category}}\n  and sc.workspaceid = {{workspaceid}}\n  and run_id = (\n    select\n      max(runID)\n    from\n      security_analysis.run_number_table\n  )",
                         "run_as_role": "viewer",
                         "run_as_service_principal_id": null,
                         "schedule": null,
                         "tags": [
                             "SAT"
                         ],
-                        "updated_at": "2022-09-05T00:23:34Z",
+                        "updated_at": "2022-09-07T18:47:11Z",
                         "user_id": 6132399981223669,
                         "version": 1
                     },
@@ -1662,6 +1986,7 @@
                 "options": {
                     "description": "",
                     "isHidden": false,
+                    "overrideColors": false,
                     "parameterMappings": {
                         "category": {
                             "mapTo": "category",
@@ -1676,6 +2001,13 @@
                             "title": "",
                             "type": "static-value",
                             "value": "Low"
+                        },
+                        "workspaceid": {
+                            "mapTo": "workspaceid",
+                            "name": "workspaceid",
+                            "title": "Select a workspace",
+                            "type": "dashboard-level",
+                            "value": null
                         }
                     },
                     "position": {
@@ -1692,7 +2024,7 @@
                     "title": "Low"
                 },
                 "text": "",
-                "updated_at": "2022-07-20T14:41:34Z",
+                "updated_at": "2022-09-07T20:23:15Z",
                 "visualization": {
                     "created_at": "2022-07-20T14:41:20Z",
                     "description": "",
@@ -1716,12 +2048,12 @@
                         "id": "6c11756d-132f-4727-92df-2a085ef2a204",
                         "is_draft": false,
                         "is_safe": true,
-                        "name": "Category Counters",
+                        "name": "category_counters",
                         "options": {
                             "apply_auto_limit": true,
                             "parameters": [
                                 {
-                                    "$$value": "High",
+                                    "$$value": "Low",
                                     "global": false,
                                     "locals": [],
                                     "name": "severity",
@@ -1729,7 +2061,7 @@
                                     "title": "severity",
                                     "type": "text",
                                     "urlPrefix": "p_",
-                                    "value": "High"
+                                    "value": "Low"
                                 },
                                 {
                                     "$$value": "Identity & Access",
@@ -1741,22 +2073,34 @@
                                     "type": "text",
                                     "urlPrefix": "p_",
                                     "value": "Identity & Access"
+                                },
+                                {
+                                    "$$value": "1657683783405196",
+                                    "global": false,
+                                    "locals": [],
+                                    "name": "workspaceid",
+                                    "queryId": "07b9f7cc-acfd-4409-977d-b8f1e9527ca7",
+                                    "title": "Workspace",
+                                    "type": "query",
+                                    "urlPrefix": "p_",
+                                    "value": "1657683783405196"
                                 }
                             ],
                             "run_as_role": "viewer",
                             "visualization_control_order": [
                                 "severity",
-                                "category"
+                                "category",
+                                "workspaceid"
                             ]
                         },
-                        "query": "SELECT\n  count(*) as counter\nFROM\n  security_analysis.security_checks sc,\n  security_analysis.security_best_practices sbp\nwhere\n  sc.chk_name = sbp.chk_name\n  and sbp.severity = {{severity}}\n  and sc.score = 1\n  and sbp.category = {{category}}\n  and run_id = (\n    select\n      max(runID)\n    from\n      security_analysis.run_number_table\n  )",
+                        "query": "SELECT\n  count(*) as counter\nFROM\n  security_analysis.security_checks sc,\n  security_analysis.security_best_practices sbp\nwhere\n  sc.chk_name = sbp.chk_name\n  and sbp.severity = {{severity}}\n  and sc.score = 1\n  and sbp.category = {{category}}\n  and sc.workspaceid = {{workspaceid}}\n  and run_id = (\n    select\n      max(runID)\n    from\n      security_analysis.run_number_table\n  )",
                         "run_as_role": "viewer",
                         "run_as_service_principal_id": null,
                         "schedule": null,
                         "tags": [
                             "SAT"
                         ],
-                        "updated_at": "2022-09-05T00:23:34Z",
+                        "updated_at": "2022-09-07T18:47:11Z",
                         "user_id": 6132399981223669,
                         "version": 1
                     },
@@ -1773,6 +2117,7 @@
                 "options": {
                     "description": "",
                     "isHidden": false,
+                    "overrideColors": false,
                     "parameterMappings": {
                         "category": {
                             "mapTo": "category",
@@ -1787,6 +2132,13 @@
                             "title": "",
                             "type": "static-value",
                             "value": "High"
+                        },
+                        "workspaceid": {
+                            "mapTo": "workspaceid",
+                            "name": "workspaceid",
+                            "title": "Select a workspace",
+                            "type": "dashboard-level",
+                            "value": null
                         }
                     },
                     "position": {
@@ -1803,7 +2155,7 @@
                     "title": "High"
                 },
                 "text": "",
-                "updated_at": "2022-07-20T14:41:35Z",
+                "updated_at": "2022-09-07T20:23:16Z",
                 "visualization": {
                     "created_at": "2022-07-20T14:41:20Z",
                     "description": "",
@@ -1827,12 +2179,12 @@
                         "id": "6c11756d-132f-4727-92df-2a085ef2a204",
                         "is_draft": false,
                         "is_safe": true,
-                        "name": "Category Counters",
+                        "name": "category_counters",
                         "options": {
                             "apply_auto_limit": true,
                             "parameters": [
                                 {
-                                    "$$value": "High",
+                                    "$$value": "Low",
                                     "global": false,
                                     "locals": [],
                                     "name": "severity",
@@ -1840,7 +2192,7 @@
                                     "title": "severity",
                                     "type": "text",
                                     "urlPrefix": "p_",
-                                    "value": "High"
+                                    "value": "Low"
                                 },
                                 {
                                     "$$value": "Identity & Access",
@@ -1852,22 +2204,34 @@
                                     "type": "text",
                                     "urlPrefix": "p_",
                                     "value": "Identity & Access"
+                                },
+                                {
+                                    "$$value": "1657683783405196",
+                                    "global": false,
+                                    "locals": [],
+                                    "name": "workspaceid",
+                                    "queryId": "07b9f7cc-acfd-4409-977d-b8f1e9527ca7",
+                                    "title": "Workspace",
+                                    "type": "query",
+                                    "urlPrefix": "p_",
+                                    "value": "1657683783405196"
                                 }
                             ],
                             "run_as_role": "viewer",
                             "visualization_control_order": [
                                 "severity",
-                                "category"
+                                "category",
+                                "workspaceid"
                             ]
                         },
-                        "query": "SELECT\n  count(*) as counter\nFROM\n  security_analysis.security_checks sc,\n  security_analysis.security_best_practices sbp\nwhere\n  sc.chk_name = sbp.chk_name\n  and sbp.severity = {{severity}}\n  and sc.score = 1\n  and sbp.category = {{category}}\n  and run_id = (\n    select\n      max(runID)\n    from\n      security_analysis.run_number_table\n  )",
+                        "query": "SELECT\n  count(*) as counter\nFROM\n  security_analysis.security_checks sc,\n  security_analysis.security_best_practices sbp\nwhere\n  sc.chk_name = sbp.chk_name\n  and sbp.severity = {{severity}}\n  and sc.score = 1\n  and sbp.category = {{category}}\n  and sc.workspaceid = {{workspaceid}}\n  and run_id = (\n    select\n      max(runID)\n    from\n      security_analysis.run_number_table\n  )",
                         "run_as_role": "viewer",
                         "run_as_service_principal_id": null,
                         "schedule": null,
                         "tags": [
                             "SAT"
                         ],
-                        "updated_at": "2022-09-05T00:23:34Z",
+                        "updated_at": "2022-09-07T18:47:11Z",
                         "user_id": 6132399981223669,
                         "version": 1
                     },
@@ -1884,6 +2248,7 @@
                 "options": {
                     "description": "",
                     "isHidden": false,
+                    "overrideColors": false,
                     "parameterMappings": {
                         "category": {
                             "mapTo": "category",
@@ -1898,6 +2263,13 @@
                             "title": "",
                             "type": "static-value",
                             "value": "Low"
+                        },
+                        "workspaceid": {
+                            "mapTo": "workspaceid",
+                            "name": "workspaceid",
+                            "title": "Select a workspace",
+                            "type": "dashboard-level",
+                            "value": null
                         }
                     },
                     "position": {
@@ -1914,7 +2286,7 @@
                     "title": "Low"
                 },
                 "text": "",
-                "updated_at": "2022-07-20T14:41:35Z",
+                "updated_at": "2022-09-07T20:23:15Z",
                 "visualization": {
                     "created_at": "2022-07-20T14:41:20Z",
                     "description": "",
@@ -1938,12 +2310,12 @@
                         "id": "6c11756d-132f-4727-92df-2a085ef2a204",
                         "is_draft": false,
                         "is_safe": true,
-                        "name": "Category Counters",
+                        "name": "category_counters",
                         "options": {
                             "apply_auto_limit": true,
                             "parameters": [
                                 {
-                                    "$$value": "High",
+                                    "$$value": "Low",
                                     "global": false,
                                     "locals": [],
                                     "name": "severity",
@@ -1951,7 +2323,7 @@
                                     "title": "severity",
                                     "type": "text",
                                     "urlPrefix": "p_",
-                                    "value": "High"
+                                    "value": "Low"
                                 },
                                 {
                                     "$$value": "Identity & Access",
@@ -1963,22 +2335,34 @@
                                     "type": "text",
                                     "urlPrefix": "p_",
                                     "value": "Identity & Access"
+                                },
+                                {
+                                    "$$value": "1657683783405196",
+                                    "global": false,
+                                    "locals": [],
+                                    "name": "workspaceid",
+                                    "queryId": "07b9f7cc-acfd-4409-977d-b8f1e9527ca7",
+                                    "title": "Workspace",
+                                    "type": "query",
+                                    "urlPrefix": "p_",
+                                    "value": "1657683783405196"
                                 }
                             ],
                             "run_as_role": "viewer",
                             "visualization_control_order": [
                                 "severity",
-                                "category"
+                                "category",
+                                "workspaceid"
                             ]
                         },
-                        "query": "SELECT\n  count(*) as counter\nFROM\n  security_analysis.security_checks sc,\n  security_analysis.security_best_practices sbp\nwhere\n  sc.chk_name = sbp.chk_name\n  and sbp.severity = {{severity}}\n  and sc.score = 1\n  and sbp.category = {{category}}\n  and run_id = (\n    select\n      max(runID)\n    from\n      security_analysis.run_number_table\n  )",
+                        "query": "SELECT\n  count(*) as counter\nFROM\n  security_analysis.security_checks sc,\n  security_analysis.security_best_practices sbp\nwhere\n  sc.chk_name = sbp.chk_name\n  and sbp.severity = {{severity}}\n  and sc.score = 1\n  and sbp.category = {{category}}\n  and sc.workspaceid = {{workspaceid}}\n  and run_id = (\n    select\n      max(runID)\n    from\n      security_analysis.run_number_table\n  )",
                         "run_as_role": "viewer",
                         "run_as_service_principal_id": null,
                         "schedule": null,
                         "tags": [
                             "SAT"
                         ],
-                        "updated_at": "2022-09-05T00:23:34Z",
+                        "updated_at": "2022-09-07T18:47:11Z",
                         "user_id": 6132399981223669,
                         "version": 1
                     },
@@ -1995,6 +2379,7 @@
                 "options": {
                     "description": "",
                     "isHidden": false,
+                    "overrideColors": false,
                     "parameterMappings": {
                         "category": {
                             "mapTo": "category",
@@ -2009,6 +2394,13 @@
                             "title": "",
                             "type": "static-value",
                             "value": "Medium"
+                        },
+                        "workspaceid": {
+                            "mapTo": "workspaceid",
+                            "name": "workspaceid",
+                            "title": "Select a workspace",
+                            "type": "dashboard-level",
+                            "value": null
                         }
                     },
                     "position": {
@@ -2025,7 +2417,7 @@
                     "title": "Medium"
                 },
                 "text": "",
-                "updated_at": "2022-07-20T14:41:36Z",
+                "updated_at": "2022-09-07T20:23:16Z",
                 "visualization": {
                     "created_at": "2022-07-20T14:41:20Z",
                     "description": "",
@@ -2049,12 +2441,12 @@
                         "id": "6c11756d-132f-4727-92df-2a085ef2a204",
                         "is_draft": false,
                         "is_safe": true,
-                        "name": "Category Counters",
+                        "name": "category_counters",
                         "options": {
                             "apply_auto_limit": true,
                             "parameters": [
                                 {
-                                    "$$value": "High",
+                                    "$$value": "Low",
                                     "global": false,
                                     "locals": [],
                                     "name": "severity",
@@ -2062,7 +2454,7 @@
                                     "title": "severity",
                                     "type": "text",
                                     "urlPrefix": "p_",
-                                    "value": "High"
+                                    "value": "Low"
                                 },
                                 {
                                     "$$value": "Identity & Access",
@@ -2074,22 +2466,34 @@
                                     "type": "text",
                                     "urlPrefix": "p_",
                                     "value": "Identity & Access"
+                                },
+                                {
+                                    "$$value": "1657683783405196",
+                                    "global": false,
+                                    "locals": [],
+                                    "name": "workspaceid",
+                                    "queryId": "07b9f7cc-acfd-4409-977d-b8f1e9527ca7",
+                                    "title": "Workspace",
+                                    "type": "query",
+                                    "urlPrefix": "p_",
+                                    "value": "1657683783405196"
                                 }
                             ],
                             "run_as_role": "viewer",
                             "visualization_control_order": [
                                 "severity",
-                                "category"
+                                "category",
+                                "workspaceid"
                             ]
                         },
-                        "query": "SELECT\n  count(*) as counter\nFROM\n  security_analysis.security_checks sc,\n  security_analysis.security_best_practices sbp\nwhere\n  sc.chk_name = sbp.chk_name\n  and sbp.severity = {{severity}}\n  and sc.score = 1\n  and sbp.category = {{category}}\n  and run_id = (\n    select\n      max(runID)\n    from\n      security_analysis.run_number_table\n  )",
+                        "query": "SELECT\n  count(*) as counter\nFROM\n  security_analysis.security_checks sc,\n  security_analysis.security_best_practices sbp\nwhere\n  sc.chk_name = sbp.chk_name\n  and sbp.severity = {{severity}}\n  and sc.score = 1\n  and sbp.category = {{category}}\n  and sc.workspaceid = {{workspaceid}}\n  and run_id = (\n    select\n      max(runID)\n    from\n      security_analysis.run_number_table\n  )",
                         "run_as_role": "viewer",
                         "run_as_service_principal_id": null,
                         "schedule": null,
                         "tags": [
                             "SAT"
                         ],
-                        "updated_at": "2022-09-05T00:23:34Z",
+                        "updated_at": "2022-09-07T18:47:11Z",
                         "user_id": 6132399981223669,
                         "version": 1
                     },
@@ -2106,6 +2510,7 @@
                 "options": {
                     "description": "",
                     "isHidden": false,
+                    "overrideColors": false,
                     "parameterMappings": {
                         "category": {
                             "mapTo": "category",
@@ -2120,6 +2525,13 @@
                             "title": "",
                             "type": "static-value",
                             "value": "Low"
+                        },
+                        "workspaceid": {
+                            "mapTo": "workspaceid",
+                            "name": "workspaceid",
+                            "title": "Select a workspace",
+                            "type": "dashboard-level",
+                            "value": null
                         }
                     },
                     "position": {
@@ -2136,7 +2548,7 @@
                     "title": "Low"
                 },
                 "text": "",
-                "updated_at": "2022-07-20T14:41:36Z",
+                "updated_at": "2022-09-07T20:23:16Z",
                 "visualization": {
                     "created_at": "2022-07-20T14:41:20Z",
                     "description": "",
@@ -2160,12 +2572,12 @@
                         "id": "6c11756d-132f-4727-92df-2a085ef2a204",
                         "is_draft": false,
                         "is_safe": true,
-                        "name": "Category Counters",
+                        "name": "category_counters",
                         "options": {
                             "apply_auto_limit": true,
                             "parameters": [
                                 {
-                                    "$$value": "High",
+                                    "$$value": "Low",
                                     "global": false,
                                     "locals": [],
                                     "name": "severity",
@@ -2173,7 +2585,7 @@
                                     "title": "severity",
                                     "type": "text",
                                     "urlPrefix": "p_",
-                                    "value": "High"
+                                    "value": "Low"
                                 },
                                 {
                                     "$$value": "Identity & Access",
@@ -2185,22 +2597,34 @@
                                     "type": "text",
                                     "urlPrefix": "p_",
                                     "value": "Identity & Access"
+                                },
+                                {
+                                    "$$value": "1657683783405196",
+                                    "global": false,
+                                    "locals": [],
+                                    "name": "workspaceid",
+                                    "queryId": "07b9f7cc-acfd-4409-977d-b8f1e9527ca7",
+                                    "title": "Workspace",
+                                    "type": "query",
+                                    "urlPrefix": "p_",
+                                    "value": "1657683783405196"
                                 }
                             ],
                             "run_as_role": "viewer",
                             "visualization_control_order": [
                                 "severity",
-                                "category"
+                                "category",
+                                "workspaceid"
                             ]
                         },
-                        "query": "SELECT\n  count(*) as counter\nFROM\n  security_analysis.security_checks sc,\n  security_analysis.security_best_practices sbp\nwhere\n  sc.chk_name = sbp.chk_name\n  and sbp.severity = {{severity}}\n  and sc.score = 1\n  and sbp.category = {{category}}\n  and run_id = (\n    select\n      max(runID)\n    from\n      security_analysis.run_number_table\n  )",
+                        "query": "SELECT\n  count(*) as counter\nFROM\n  security_analysis.security_checks sc,\n  security_analysis.security_best_practices sbp\nwhere\n  sc.chk_name = sbp.chk_name\n  and sbp.severity = {{severity}}\n  and sc.score = 1\n  and sbp.category = {{category}}\n  and sc.workspaceid = {{workspaceid}}\n  and run_id = (\n    select\n      max(runID)\n    from\n      security_analysis.run_number_table\n  )",
                         "run_as_role": "viewer",
                         "run_as_service_principal_id": null,
                         "schedule": null,
                         "tags": [
                             "SAT"
                         ],
-                        "updated_at": "2022-09-05T00:23:34Z",
+                        "updated_at": "2022-09-07T18:47:11Z",
                         "user_id": 6132399981223669,
                         "version": 1
                     },
@@ -2286,7 +2710,16 @@
                 "options": {
                     "description": "",
                     "isHidden": false,
-                    "parameterMappings": {},
+                    "overrideColors": false,
+                    "parameterMappings": {
+                        "workspaceid": {
+                            "mapTo": "workspaceid",
+                            "name": "workspaceid",
+                            "title": "Select a workspace",
+                            "type": "dashboard-level",
+                            "value": null
+                        }
+                    },
                     "position": {
                         "autoHeight": false,
                         "col": 5,
@@ -2301,7 +2734,7 @@
                     "title": "Region"
                 },
                 "text": "",
-                "updated_at": "2022-08-22T21:10:05Z",
+                "updated_at": "2022-09-07T20:23:15Z",
                 "visualization": {
                     "created_at": "2022-07-20T14:41:24Z",
                     "description": "",
@@ -2325,21 +2758,36 @@
                         "id": "c7112a9d-0dac-4f3e-94a6-95d9b9716653",
                         "is_draft": false,
                         "is_safe": true,
-                        "name": "Account_Stats",
+                        "name": "account_stats",
                         "options": {
                             "apply_auto_limit": true,
-                            "parameters": [],
+                            "parameters": [
+                                {
+                                    "$$value": "1657683783405196",
+                                    "global": false,
+                                    "locals": [],
+                                    "name": "workspaceid",
+                                    "parentQueryId": "c7112a9d-0dac-4f3e-94a6-95d9b9716653",
+                                    "queryId": "07b9f7cc-acfd-4409-977d-b8f1e9527ca7",
+                                    "title": "workspaceid",
+                                    "type": "query",
+                                    "urlPrefix": "p_",
+                                    "value": "1657683783405196"
+                                }
+                            ],
                             "run_as_role": "viewer",
-                            "visualization_control_order": []
+                            "visualization_control_order": [
+                                "workspaceid"
+                            ]
                         },
-                        "query": "SELECT\n  name,\n  value.value\nFROM\n  security_analysis.account_info\nwhere\n  category = 'Account Stats'\n  and run_id = (\n    select\n      max(runID)\n    from\n      security_analysis.run_number_table\n  )\nORDER BY name",
+                        "query": "SELECT\n  name,\n  value.value\nFROM\n  security_analysis.account_info\nwhere\n  category = 'Account Stats'\n  and run_id = (\n    select\n      max(runID)\n    from\n      security_analysis.run_number_table\n  )\n  and workspaceid = {{workspaceid}}\nORDER BY name",
                         "run_as_role": "viewer",
                         "run_as_service_principal_id": null,
                         "schedule": null,
                         "tags": [
                             "SAT"
                         ],
-                        "updated_at": "2022-09-05T00:29:36Z",
+                        "updated_at": "2022-09-07T20:07:58Z",
                         "user_id": 6132399981223669,
                         "version": 1
                     },
@@ -2379,7 +2827,16 @@
                 "options": {
                     "description": "",
                     "isHidden": false,
-                    "parameterMappings": {},
+                    "overrideColors": false,
+                    "parameterMappings": {
+                        "workspaceid": {
+                            "mapTo": "workspaceid",
+                            "name": "workspaceid",
+                            "title": "Select a workspace",
+                            "type": "dashboard-level",
+                            "value": null
+                        }
+                    },
                     "position": {
                         "autoHeight": false,
                         "col": 2,
@@ -2394,7 +2851,7 @@
                     "title": "Deployment Name"
                 },
                 "text": "",
-                "updated_at": "2022-07-20T14:41:39Z",
+                "updated_at": "2022-09-07T20:23:15Z",
                 "visualization": {
                     "created_at": "2022-07-20T14:41:22Z",
                     "description": "",
@@ -2418,21 +2875,36 @@
                         "id": "c7112a9d-0dac-4f3e-94a6-95d9b9716653",
                         "is_draft": false,
                         "is_safe": true,
-                        "name": "Account_Stats",
+                        "name": "account_stats",
                         "options": {
                             "apply_auto_limit": true,
-                            "parameters": [],
+                            "parameters": [
+                                {
+                                    "$$value": "1657683783405196",
+                                    "global": false,
+                                    "locals": [],
+                                    "name": "workspaceid",
+                                    "parentQueryId": "c7112a9d-0dac-4f3e-94a6-95d9b9716653",
+                                    "queryId": "07b9f7cc-acfd-4409-977d-b8f1e9527ca7",
+                                    "title": "workspaceid",
+                                    "type": "query",
+                                    "urlPrefix": "p_",
+                                    "value": "1657683783405196"
+                                }
+                            ],
                             "run_as_role": "viewer",
-                            "visualization_control_order": []
+                            "visualization_control_order": [
+                                "workspaceid"
+                            ]
                         },
-                        "query": "SELECT\n  name,\n  value.value\nFROM\n  security_analysis.account_info\nwhere\n  category = 'Account Stats'\n  and run_id = (\n    select\n      max(runID)\n    from\n      security_analysis.run_number_table\n  )\nORDER BY name",
+                        "query": "SELECT\n  name,\n  value.value\nFROM\n  security_analysis.account_info\nwhere\n  category = 'Account Stats'\n  and run_id = (\n    select\n      max(runID)\n    from\n      security_analysis.run_number_table\n  )\n  and workspaceid = {{workspaceid}}\nORDER BY name",
                         "run_as_role": "viewer",
                         "run_as_service_principal_id": null,
                         "schedule": null,
                         "tags": [
                             "SAT"
                         ],
-                        "updated_at": "2022-09-05T00:29:36Z",
+                        "updated_at": "2022-09-07T20:07:58Z",
                         "user_id": 6132399981223669,
                         "version": 1
                     },
@@ -2449,7 +2921,16 @@
                 "options": {
                     "description": "",
                     "isHidden": false,
-                    "parameterMappings": {},
+                    "overrideColors": false,
+                    "parameterMappings": {
+                        "workspaceid": {
+                            "mapTo": "workspaceid",
+                            "name": "workspaceid",
+                            "title": "Select a workspace",
+                            "type": "dashboard-level",
+                            "value": null
+                        }
+                    },
                     "position": {
                         "autoHeight": false,
                         "col": 4,
@@ -2464,7 +2945,7 @@
                     "title": "Tier"
                 },
                 "text": "",
-                "updated_at": "2022-08-22T21:10:05Z",
+                "updated_at": "2022-09-07T20:23:15Z",
                 "visualization": {
                     "created_at": "2022-07-20T14:41:22Z",
                     "description": "",
@@ -2488,21 +2969,36 @@
                         "id": "c7112a9d-0dac-4f3e-94a6-95d9b9716653",
                         "is_draft": false,
                         "is_safe": true,
-                        "name": "Account_Stats",
+                        "name": "account_stats",
                         "options": {
                             "apply_auto_limit": true,
-                            "parameters": [],
+                            "parameters": [
+                                {
+                                    "$$value": "1657683783405196",
+                                    "global": false,
+                                    "locals": [],
+                                    "name": "workspaceid",
+                                    "parentQueryId": "c7112a9d-0dac-4f3e-94a6-95d9b9716653",
+                                    "queryId": "07b9f7cc-acfd-4409-977d-b8f1e9527ca7",
+                                    "title": "workspaceid",
+                                    "type": "query",
+                                    "urlPrefix": "p_",
+                                    "value": "1657683783405196"
+                                }
+                            ],
                             "run_as_role": "viewer",
-                            "visualization_control_order": []
+                            "visualization_control_order": [
+                                "workspaceid"
+                            ]
                         },
-                        "query": "SELECT\n  name,\n  value.value\nFROM\n  security_analysis.account_info\nwhere\n  category = 'Account Stats'\n  and run_id = (\n    select\n      max(runID)\n    from\n      security_analysis.run_number_table\n  )\nORDER BY name",
+                        "query": "SELECT\n  name,\n  value.value\nFROM\n  security_analysis.account_info\nwhere\n  category = 'Account Stats'\n  and run_id = (\n    select\n      max(runID)\n    from\n      security_analysis.run_number_table\n  )\n  and workspaceid = {{workspaceid}}\nORDER BY name",
                         "run_as_role": "viewer",
                         "run_as_service_principal_id": null,
                         "schedule": null,
                         "tags": [
                             "SAT"
                         ],
-                        "updated_at": "2022-09-05T00:29:36Z",
+                        "updated_at": "2022-09-07T20:07:58Z",
                         "user_id": 6132399981223669,
                         "version": 1
                     },
@@ -2520,7 +3016,15 @@
                     "description": "",
                     "isHidden": false,
                     "overrideColors": false,
-                    "parameterMappings": {},
+                    "parameterMappings": {
+                        "workspaceid": {
+                            "mapTo": "workspaceid",
+                            "name": "workspaceid",
+                            "title": "Select a workspace",
+                            "type": "dashboard-level",
+                            "value": null
+                        }
+                    },
                     "position": {
                         "autoHeight": false,
                         "col": 0,
@@ -2535,7 +3039,7 @@
                     "title": "Databricks Account Id "
                 },
                 "text": "",
-                "updated_at": "2022-07-20T14:41:39Z",
+                "updated_at": "2022-09-07T20:23:15Z",
                 "visualization": {
                     "created_at": "2022-07-20T14:41:22Z",
                     "description": "",
@@ -2559,21 +3063,36 @@
                         "id": "c7112a9d-0dac-4f3e-94a6-95d9b9716653",
                         "is_draft": false,
                         "is_safe": true,
-                        "name": "Account_Stats",
+                        "name": "account_stats",
                         "options": {
                             "apply_auto_limit": true,
-                            "parameters": [],
+                            "parameters": [
+                                {
+                                    "$$value": "1657683783405196",
+                                    "global": false,
+                                    "locals": [],
+                                    "name": "workspaceid",
+                                    "parentQueryId": "c7112a9d-0dac-4f3e-94a6-95d9b9716653",
+                                    "queryId": "07b9f7cc-acfd-4409-977d-b8f1e9527ca7",
+                                    "title": "workspaceid",
+                                    "type": "query",
+                                    "urlPrefix": "p_",
+                                    "value": "1657683783405196"
+                                }
+                            ],
                             "run_as_role": "viewer",
-                            "visualization_control_order": []
+                            "visualization_control_order": [
+                                "workspaceid"
+                            ]
                         },
-                        "query": "SELECT\n  name,\n  value.value\nFROM\n  security_analysis.account_info\nwhere\n  category = 'Account Stats'\n  and run_id = (\n    select\n      max(runID)\n    from\n      security_analysis.run_number_table\n  )\nORDER BY name",
+                        "query": "SELECT\n  name,\n  value.value\nFROM\n  security_analysis.account_info\nwhere\n  category = 'Account Stats'\n  and run_id = (\n    select\n      max(runID)\n    from\n      security_analysis.run_number_table\n  )\n  and workspaceid = {{workspaceid}}\nORDER BY name",
                         "run_as_role": "viewer",
                         "run_as_service_principal_id": null,
                         "schedule": null,
                         "tags": [
                             "SAT"
                         ],
-                        "updated_at": "2022-09-05T00:29:36Z",
+                        "updated_at": "2022-09-07T20:07:58Z",
                         "user_id": 6132399981223669,
                         "version": 1
                     },
@@ -2598,6 +3117,13 @@
                             "title": "",
                             "type": "static-value",
                             "value": "Identity & Access"
+                        },
+                        "workspaceid": {
+                            "mapTo": "workspaceid",
+                            "name": "workspaceid",
+                            "title": "Select a workspace",
+                            "type": "dashboard-level",
+                            "value": null
                         }
                     },
                     "position": {
@@ -2614,7 +3140,7 @@
                     "title": "Identity & Access Summary"
                 },
                 "text": "",
-                "updated_at": "2022-07-20T14:41:40Z",
+                "updated_at": "2022-09-07T20:23:15Z",
                 "visualization": {
                     "created_at": "2022-07-20T14:41:17Z",
                     "description": "",
@@ -2855,6 +3381,32 @@
                                 "type": "integer",
                                 "useMonospaceFont": false,
                                 "visible": false
+                            },
+                            {
+                                "alignContent": "left",
+                                "allowHTML": false,
+                                "allowSearch": false,
+                                "booleanValues": [
+                                    "false",
+                                    "true"
+                                ],
+                                "displayAs": "string",
+                                "highlightLinks": false,
+                                "imageHeight": "",
+                                "imageTitleTemplate": "{{ @ }}",
+                                "imageUrlTemplate": "{{ @ }}",
+                                "imageWidth": "",
+                                "linkOpenInNewTab": true,
+                                "linkTextTemplate": "{{ @ }}",
+                                "linkTitleTemplate": "{{ @ }}",
+                                "linkUrlTemplate": "{{ @ }}",
+                                "name": "workspaceid",
+                                "order": 100006,
+                                "preserveWhitespace": false,
+                                "title": "workspaceid",
+                                "type": "string",
+                                "useMonospaceFont": false,
+                                "visible": false
                             }
                         ],
                         "condensed": false,
@@ -2870,12 +3422,12 @@
                         "id": "b043e97c-a156-4d91-8a65-30bce3b1ad48",
                         "is_draft": false,
                         "is_safe": true,
-                        "name": "Category Pillars",
+                        "name": "category_pillars",
                         "options": {
                             "apply_auto_limit": true,
                             "parameters": [
                                 {
-                                    "$$value": "Compliance",
+                                    "$$value": "Workspace Settings",
                                     "global": false,
                                     "locals": [],
                                     "name": "category",
@@ -2883,28 +3435,41 @@
                                     "title": "category",
                                     "type": "text",
                                     "urlPrefix": "p_",
-                                    "value": "Compliance"
+                                    "value": "Workspace Settings"
+                                },
+                                {
+                                    "$$value": "1657683783405196",
+                                    "global": false,
+                                    "locals": [],
+                                    "name": "workspaceid",
+                                    "parentQueryId": "b043e97c-a156-4d91-8a65-30bce3b1ad48",
+                                    "queryId": "07b9f7cc-acfd-4409-977d-b8f1e9527ca7",
+                                    "title": "workspaceid",
+                                    "type": "query",
+                                    "urlPrefix": "p_",
+                                    "value": "1657683783405196"
                                 }
                             ],
                             "run_as_role": "viewer",
                             "visualization_control_order": [
-                                "category"
+                                "category",
+                                "workspaceid"
                             ]
                         },
-                        "query": "SELECT\n  check as Check,\n  BP.severity as Severity,\n  score as Status,\n  chk_date as RunDate,\n  concat(\n    '<a  href=\"',\n    BP.doc_url,\n    '\" target=\"_blank\" rel=\"noopener noreferrer\" title=\"remediation documentation\">',\n    BP.recommendation,\n    '</a>'\n  ) as Recommendation,\n  CASE\n    WHEN BP.severity = 'High' THEN 3\n    WHEN BP.severity = 'Medium' THEN 2\n    ELSE 1\n  END as ord\nFROM\n  (\n    SELECT\n      chk_name,\n      score,\n      chk_date\n    FROM\n      security_analysis.security_checks\n    where\n      run_id = (\n        select\n          max(runID)\n        from\n          security_analysis.run_number_table\n      )\n  ) SC,\n  security_analysis.security_best_practices BP\nWHERE\n  SC.chk_name = BP.chk_name\n  and BP.category = {{category}}\nORDER BY\n  Status DESC,\n  ord DESC",
+                        "query": "SELECT\n  check as Check,\n  BP.severity as Severity,\n  score as Status,\n  chk_date as RunDate,\n  concat(\n    '<a  href=\"',\n    BP.doc_url,\n    '\" target=\"_blank\" rel=\"noopener noreferrer\" title=\"remediation documentation\">',\n    BP.recommendation,\n    '</a>'\n  ) as Recommendation,\n  CASE\n    WHEN BP.severity = 'High' THEN 3\n    WHEN BP.severity = 'Medium' THEN 2\n    ELSE 1\n  END as ord,\n  workspaceid\nFROM\n  (\n    SELECT\n      chk_name,\n      score,\n      chk_date,\n      workspaceid\n    FROM\n      security_analysis.security_checks\n    where\n      run_id = (\n        select\n          max(runID)\n        from\n          security_analysis.run_number_table\n      )\n  ) SC,\n  security_analysis.security_best_practices BP\nWHERE\n  SC.chk_name = BP.chk_name\n  and BP.category = {{category}}\n  and workspaceid ={{workspaceid}}\nORDER BY\n  Status DESC,\n  ord DESC",
                         "run_as_role": "viewer",
                         "run_as_service_principal_id": null,
                         "schedule": null,
                         "tags": [
                             "SAT"
                         ],
-                        "updated_at": "2022-09-05T00:27:54Z",
+                        "updated_at": "2022-09-07T18:18:36Z",
                         "user_id": 6132399981223669,
                         "version": 1
                     },
                     "query_plan": null,
                     "type": "TABLE",
-                    "updated_at": "2022-08-11T19:47:09Z"
+                    "updated_at": "2022-09-07T17:53:31Z"
                 },
                 "width": 1
             },
@@ -2923,6 +3488,13 @@
                             "title": "",
                             "type": "static-value",
                             "value": "Compliance"
+                        },
+                        "workspaceid": {
+                            "mapTo": "workspaceid",
+                            "name": "workspaceid",
+                            "title": "Select a workspace",
+                            "type": "dashboard-level",
+                            "value": null
                         }
                     },
                     "position": {
@@ -2939,7 +3511,7 @@
                     "title": "Compliance Summary"
                 },
                 "text": "",
-                "updated_at": "2022-07-20T14:41:40Z",
+                "updated_at": "2022-09-07T20:23:16Z",
                 "visualization": {
                     "created_at": "2022-07-20T14:41:17Z",
                     "description": "",
@@ -3180,6 +3752,32 @@
                                 "type": "integer",
                                 "useMonospaceFont": false,
                                 "visible": false
+                            },
+                            {
+                                "alignContent": "left",
+                                "allowHTML": false,
+                                "allowSearch": false,
+                                "booleanValues": [
+                                    "false",
+                                    "true"
+                                ],
+                                "displayAs": "string",
+                                "highlightLinks": false,
+                                "imageHeight": "",
+                                "imageTitleTemplate": "{{ @ }}",
+                                "imageUrlTemplate": "{{ @ }}",
+                                "imageWidth": "",
+                                "linkOpenInNewTab": true,
+                                "linkTextTemplate": "{{ @ }}",
+                                "linkTitleTemplate": "{{ @ }}",
+                                "linkUrlTemplate": "{{ @ }}",
+                                "name": "workspaceid",
+                                "order": 100006,
+                                "preserveWhitespace": false,
+                                "title": "workspaceid",
+                                "type": "string",
+                                "useMonospaceFont": false,
+                                "visible": false
                             }
                         ],
                         "condensed": false,
@@ -3195,12 +3793,12 @@
                         "id": "b043e97c-a156-4d91-8a65-30bce3b1ad48",
                         "is_draft": false,
                         "is_safe": true,
-                        "name": "Category Pillars",
+                        "name": "category_pillars",
                         "options": {
                             "apply_auto_limit": true,
                             "parameters": [
                                 {
-                                    "$$value": "Compliance",
+                                    "$$value": "Workspace Settings",
                                     "global": false,
                                     "locals": [],
                                     "name": "category",
@@ -3208,28 +3806,41 @@
                                     "title": "category",
                                     "type": "text",
                                     "urlPrefix": "p_",
-                                    "value": "Compliance"
+                                    "value": "Workspace Settings"
+                                },
+                                {
+                                    "$$value": "1657683783405196",
+                                    "global": false,
+                                    "locals": [],
+                                    "name": "workspaceid",
+                                    "parentQueryId": "b043e97c-a156-4d91-8a65-30bce3b1ad48",
+                                    "queryId": "07b9f7cc-acfd-4409-977d-b8f1e9527ca7",
+                                    "title": "workspaceid",
+                                    "type": "query",
+                                    "urlPrefix": "p_",
+                                    "value": "1657683783405196"
                                 }
                             ],
                             "run_as_role": "viewer",
                             "visualization_control_order": [
-                                "category"
+                                "category",
+                                "workspaceid"
                             ]
                         },
-                        "query": "SELECT\n  check as Check,\n  BP.severity as Severity,\n  score as Status,\n  chk_date as RunDate,\n  concat(\n    '<a  href=\"',\n    BP.doc_url,\n    '\" target=\"_blank\" rel=\"noopener noreferrer\" title=\"remediation documentation\">',\n    BP.recommendation,\n    '</a>'\n  ) as Recommendation,\n  CASE\n    WHEN BP.severity = 'High' THEN 3\n    WHEN BP.severity = 'Medium' THEN 2\n    ELSE 1\n  END as ord\nFROM\n  (\n    SELECT\n      chk_name,\n      score,\n      chk_date\n    FROM\n      security_analysis.security_checks\n    where\n      run_id = (\n        select\n          max(runID)\n        from\n          security_analysis.run_number_table\n      )\n  ) SC,\n  security_analysis.security_best_practices BP\nWHERE\n  SC.chk_name = BP.chk_name\n  and BP.category = {{category}}\nORDER BY\n  Status DESC,\n  ord DESC",
+                        "query": "SELECT\n  check as Check,\n  BP.severity as Severity,\n  score as Status,\n  chk_date as RunDate,\n  concat(\n    '<a  href=\"',\n    BP.doc_url,\n    '\" target=\"_blank\" rel=\"noopener noreferrer\" title=\"remediation documentation\">',\n    BP.recommendation,\n    '</a>'\n  ) as Recommendation,\n  CASE\n    WHEN BP.severity = 'High' THEN 3\n    WHEN BP.severity = 'Medium' THEN 2\n    ELSE 1\n  END as ord,\n  workspaceid\nFROM\n  (\n    SELECT\n      chk_name,\n      score,\n      chk_date,\n      workspaceid\n    FROM\n      security_analysis.security_checks\n    where\n      run_id = (\n        select\n          max(runID)\n        from\n          security_analysis.run_number_table\n      )\n  ) SC,\n  security_analysis.security_best_practices BP\nWHERE\n  SC.chk_name = BP.chk_name\n  and BP.category = {{category}}\n  and workspaceid ={{workspaceid}}\nORDER BY\n  Status DESC,\n  ord DESC",
                         "run_as_role": "viewer",
                         "run_as_service_principal_id": null,
                         "schedule": null,
                         "tags": [
                             "SAT"
                         ],
-                        "updated_at": "2022-09-05T00:27:54Z",
+                        "updated_at": "2022-09-07T18:18:36Z",
                         "user_id": 6132399981223669,
                         "version": 1
                     },
                     "query_plan": null,
                     "type": "TABLE",
-                    "updated_at": "2022-08-11T19:47:09Z"
+                    "updated_at": "2022-09-07T17:53:31Z"
                 },
                 "width": 1
             },
@@ -3248,6 +3859,13 @@
                             "title": "",
                             "type": "static-value",
                             "value": "Data Protection"
+                        },
+                        "workspaceid": {
+                            "mapTo": "workspaceid",
+                            "name": "workspaceid",
+                            "title": "Select a workspace",
+                            "type": "dashboard-level",
+                            "value": null
                         }
                     },
                     "position": {
@@ -3264,7 +3882,7 @@
                     "title": "Data Protection Summary"
                 },
                 "text": "",
-                "updated_at": "2022-07-20T14:41:41Z",
+                "updated_at": "2022-09-07T20:23:16Z",
                 "visualization": {
                     "created_at": "2022-07-20T14:41:17Z",
                     "description": "",
@@ -3505,6 +4123,32 @@
                                 "type": "integer",
                                 "useMonospaceFont": false,
                                 "visible": false
+                            },
+                            {
+                                "alignContent": "left",
+                                "allowHTML": false,
+                                "allowSearch": false,
+                                "booleanValues": [
+                                    "false",
+                                    "true"
+                                ],
+                                "displayAs": "string",
+                                "highlightLinks": false,
+                                "imageHeight": "",
+                                "imageTitleTemplate": "{{ @ }}",
+                                "imageUrlTemplate": "{{ @ }}",
+                                "imageWidth": "",
+                                "linkOpenInNewTab": true,
+                                "linkTextTemplate": "{{ @ }}",
+                                "linkTitleTemplate": "{{ @ }}",
+                                "linkUrlTemplate": "{{ @ }}",
+                                "name": "workspaceid",
+                                "order": 100006,
+                                "preserveWhitespace": false,
+                                "title": "workspaceid",
+                                "type": "string",
+                                "useMonospaceFont": false,
+                                "visible": false
                             }
                         ],
                         "condensed": false,
@@ -3520,12 +4164,12 @@
                         "id": "b043e97c-a156-4d91-8a65-30bce3b1ad48",
                         "is_draft": false,
                         "is_safe": true,
-                        "name": "Category Pillars",
+                        "name": "category_pillars",
                         "options": {
                             "apply_auto_limit": true,
                             "parameters": [
                                 {
-                                    "$$value": "Compliance",
+                                    "$$value": "Workspace Settings",
                                     "global": false,
                                     "locals": [],
                                     "name": "category",
@@ -3533,28 +4177,41 @@
                                     "title": "category",
                                     "type": "text",
                                     "urlPrefix": "p_",
-                                    "value": "Compliance"
+                                    "value": "Workspace Settings"
+                                },
+                                {
+                                    "$$value": "1657683783405196",
+                                    "global": false,
+                                    "locals": [],
+                                    "name": "workspaceid",
+                                    "parentQueryId": "b043e97c-a156-4d91-8a65-30bce3b1ad48",
+                                    "queryId": "07b9f7cc-acfd-4409-977d-b8f1e9527ca7",
+                                    "title": "workspaceid",
+                                    "type": "query",
+                                    "urlPrefix": "p_",
+                                    "value": "1657683783405196"
                                 }
                             ],
                             "run_as_role": "viewer",
                             "visualization_control_order": [
-                                "category"
+                                "category",
+                                "workspaceid"
                             ]
                         },
-                        "query": "SELECT\n  check as Check,\n  BP.severity as Severity,\n  score as Status,\n  chk_date as RunDate,\n  concat(\n    '<a  href=\"',\n    BP.doc_url,\n    '\" target=\"_blank\" rel=\"noopener noreferrer\" title=\"remediation documentation\">',\n    BP.recommendation,\n    '</a>'\n  ) as Recommendation,\n  CASE\n    WHEN BP.severity = 'High' THEN 3\n    WHEN BP.severity = 'Medium' THEN 2\n    ELSE 1\n  END as ord\nFROM\n  (\n    SELECT\n      chk_name,\n      score,\n      chk_date\n    FROM\n      security_analysis.security_checks\n    where\n      run_id = (\n        select\n          max(runID)\n        from\n          security_analysis.run_number_table\n      )\n  ) SC,\n  security_analysis.security_best_practices BP\nWHERE\n  SC.chk_name = BP.chk_name\n  and BP.category = {{category}}\nORDER BY\n  Status DESC,\n  ord DESC",
+                        "query": "SELECT\n  check as Check,\n  BP.severity as Severity,\n  score as Status,\n  chk_date as RunDate,\n  concat(\n    '<a  href=\"',\n    BP.doc_url,\n    '\" target=\"_blank\" rel=\"noopener noreferrer\" title=\"remediation documentation\">',\n    BP.recommendation,\n    '</a>'\n  ) as Recommendation,\n  CASE\n    WHEN BP.severity = 'High' THEN 3\n    WHEN BP.severity = 'Medium' THEN 2\n    ELSE 1\n  END as ord,\n  workspaceid\nFROM\n  (\n    SELECT\n      chk_name,\n      score,\n      chk_date,\n      workspaceid\n    FROM\n      security_analysis.security_checks\n    where\n      run_id = (\n        select\n          max(runID)\n        from\n          security_analysis.run_number_table\n      )\n  ) SC,\n  security_analysis.security_best_practices BP\nWHERE\n  SC.chk_name = BP.chk_name\n  and BP.category = {{category}}\n  and workspaceid ={{workspaceid}}\nORDER BY\n  Status DESC,\n  ord DESC",
                         "run_as_role": "viewer",
                         "run_as_service_principal_id": null,
                         "schedule": null,
                         "tags": [
                             "SAT"
                         ],
-                        "updated_at": "2022-09-05T00:27:54Z",
+                        "updated_at": "2022-09-07T18:18:36Z",
                         "user_id": 6132399981223669,
                         "version": 1
                     },
                     "query_plan": null,
                     "type": "TABLE",
-                    "updated_at": "2022-08-11T19:47:09Z"
+                    "updated_at": "2022-09-07T17:53:31Z"
                 },
                 "width": 1
             },
@@ -3566,7 +4223,15 @@
                     "description": "",
                     "isHidden": false,
                     "overrideColors": true,
-                    "parameterMappings": {},
+                    "parameterMappings": {
+                        "workspaceid": {
+                            "mapTo": "workspaceid",
+                            "name": "workspaceid",
+                            "title": "Select a workspace",
+                            "type": "dashboard-level",
+                            "value": null
+                        }
+                    },
                     "position": {
                         "autoHeight": false,
                         "col": 0,
@@ -3581,7 +4246,7 @@
                     "title": "Summary"
                 },
                 "text": "",
-                "updated_at": "2022-08-22T21:10:05Z",
+                "updated_at": "2022-09-07T20:23:15Z",
                 "visualization": {
                     "created_at": "2022-07-20T14:41:26Z",
                     "description": "",
@@ -3689,22 +4354,37 @@
                         "id": "fdc33af2-0921-4fed-b320-08ed92eb4c18",
                         "is_draft": false,
                         "is_safe": true,
-                        "name": "SummaryStats",
+                        "name": "summary_stats",
                         "options": {
                             "apply_auto_limit": true,
-                            "parameters": [],
+                            "parameters": [
+                                {
+                                    "$$value": "1657683783405196",
+                                    "global": false,
+                                    "locals": [],
+                                    "name": "workspaceid",
+                                    "parentQueryId": "fdc33af2-0921-4fed-b320-08ed92eb4c18",
+                                    "queryId": "07b9f7cc-acfd-4409-977d-b8f1e9527ca7",
+                                    "title": "Workspace",
+                                    "type": "query",
+                                    "urlPrefix": "p_",
+                                    "value": "1657683783405196"
+                                }
+                            ],
                             "run_as_role": "viewer",
                             "schema": "security_analysis",
-                            "visualization_control_order": []
+                            "visualization_control_order": [
+                                "workspaceid"
+                            ]
                         },
-                        "query": "Select\n  concat(\n    results.category,\n    ' (Out of ',\n    category_count,\n    ')'\n  ) as category,\n  severity,\n  severity_count,\n  ord\nFROM\n  (\n    SELECT\n      sbp.category,\n      sbp.severity,\n      count(sbp.severity) severity_count,\n      CASE\n        WHEN sbp.severity = 'High' THEN 3\n        WHEN sbp.severity = 'Medium' THEN 2\n        ELSE 1\n      END as ord\n    FROM\n      security_analysis.security_checks sc,\n      security_analysis.security_best_practices sbp\n    where\n      score = 1\n      and sc.chk_name = sbp.chk_name\n      and run_id = (\n        select\n          max(runID)\n        from\n          security_analysis.run_number_table\n      )\n      and category not IN ('Workspace Settings', 'Workspace Stats')\n    group by\n      sbp.category,\n      sbp.severity\n  ) as results,\n  (\n    SELECT\n      category,\n      count(*) as category_count\n    FROM\n      security_analysis.security_best_practices\n    WHERE\n      category not IN ('Workspace Settings', 'Workspace Stats')\n    group by\n      category\n  ) as master\nwhere\n  results.category = master.category\n  ",
+                        "query": "Select\n  concat(\n    results.category,\n    ' (Out of ',\n    category_count,\n    ')'\n  ) as category,\n  severity,\n  severity_count,\n  ord\nFROM\n  (\n    SELECT\n      sbp.category,\n      sbp.severity,\n      count(sbp.severity) severity_count,\n      CASE\n        WHEN sbp.severity = 'High' THEN 3\n        WHEN sbp.severity = 'Medium' THEN 2\n        ELSE 1\n      END as ord\n    FROM\n      security_analysis.security_checks sc,\n      security_analysis.security_best_practices sbp\n    where\n      score = 1\n      and sc.chk_name = sbp.chk_name\n      and run_id = (\n        select\n          max(runID)\n        from\n          security_analysis.run_number_table\n      )\n      and category not IN ('Workspace Settings', 'Workspace Stats')\n      and workspaceid={{workspaceid}}\n    group by\n      sbp.category,\n      sbp.severity\n  ) as results,\n  (\n    SELECT\n      category,\n      count(*) as category_count\n    FROM\n      security_analysis.security_best_practices\n    WHERE\n      category not IN ('Workspace Settings', 'Workspace Stats')\n    group by\n      category\n  ) as master\nwhere\n  results.category = master.category\n  ",
                         "run_as_role": "viewer",
                         "run_as_service_principal_id": null,
                         "schedule": null,
                         "tags": [
                             "SAT"
                         ],
-                        "updated_at": "2022-09-06T16:52:15Z",
+                        "updated_at": "2022-09-07T18:42:07Z",
                         "user_id": 6132399981223669,
                         "version": 1
                     },
@@ -3747,6 +4427,7 @@
                 "options": {
                     "description": "",
                     "isHidden": false,
+                    "overrideColors": false,
                     "parameterMappings": {
                         "category": {
                             "mapTo": "category",
@@ -3754,6 +4435,13 @@
                             "title": "",
                             "type": "static-value",
                             "value": "Workspace Settings"
+                        },
+                        "workspaceid": {
+                            "mapTo": "workspaceid",
+                            "name": "workspaceid",
+                            "title": "Select a workspace",
+                            "type": "dashboard-level",
+                            "value": null
                         }
                     },
                     "position": {
@@ -3770,7 +4458,7 @@
                     "title": "Workspace Settings"
                 },
                 "text": "",
-                "updated_at": "2022-07-20T14:41:41Z",
+                "updated_at": "2022-09-07T20:23:15Z",
                 "visualization": {
                     "created_at": "2022-07-20T14:41:17Z",
                     "description": "",
@@ -4011,6 +4699,32 @@
                                 "type": "integer",
                                 "useMonospaceFont": false,
                                 "visible": false
+                            },
+                            {
+                                "alignContent": "left",
+                                "allowHTML": false,
+                                "allowSearch": false,
+                                "booleanValues": [
+                                    "false",
+                                    "true"
+                                ],
+                                "displayAs": "string",
+                                "highlightLinks": false,
+                                "imageHeight": "",
+                                "imageTitleTemplate": "{{ @ }}",
+                                "imageUrlTemplate": "{{ @ }}",
+                                "imageWidth": "",
+                                "linkOpenInNewTab": true,
+                                "linkTextTemplate": "{{ @ }}",
+                                "linkTitleTemplate": "{{ @ }}",
+                                "linkUrlTemplate": "{{ @ }}",
+                                "name": "workspaceid",
+                                "order": 100006,
+                                "preserveWhitespace": false,
+                                "title": "workspaceid",
+                                "type": "string",
+                                "useMonospaceFont": false,
+                                "visible": false
                             }
                         ],
                         "condensed": false,
@@ -4026,12 +4740,12 @@
                         "id": "b043e97c-a156-4d91-8a65-30bce3b1ad48",
                         "is_draft": false,
                         "is_safe": true,
-                        "name": "Category Pillars",
+                        "name": "category_pillars",
                         "options": {
                             "apply_auto_limit": true,
                             "parameters": [
                                 {
-                                    "$$value": "Compliance",
+                                    "$$value": "Workspace Settings",
                                     "global": false,
                                     "locals": [],
                                     "name": "category",
@@ -4039,34 +4753,121 @@
                                     "title": "category",
                                     "type": "text",
                                     "urlPrefix": "p_",
-                                    "value": "Compliance"
+                                    "value": "Workspace Settings"
+                                },
+                                {
+                                    "$$value": "1657683783405196",
+                                    "global": false,
+                                    "locals": [],
+                                    "name": "workspaceid",
+                                    "parentQueryId": "b043e97c-a156-4d91-8a65-30bce3b1ad48",
+                                    "queryId": "07b9f7cc-acfd-4409-977d-b8f1e9527ca7",
+                                    "title": "workspaceid",
+                                    "type": "query",
+                                    "urlPrefix": "p_",
+                                    "value": "1657683783405196"
                                 }
                             ],
                             "run_as_role": "viewer",
                             "visualization_control_order": [
-                                "category"
+                                "category",
+                                "workspaceid"
                             ]
                         },
-                        "query": "SELECT\n  check as Check,\n  BP.severity as Severity,\n  score as Status,\n  chk_date as RunDate,\n  concat(\n    '<a  href=\"',\n    BP.doc_url,\n    '\" target=\"_blank\" rel=\"noopener noreferrer\" title=\"remediation documentation\">',\n    BP.recommendation,\n    '</a>'\n  ) as Recommendation,\n  CASE\n    WHEN BP.severity = 'High' THEN 3\n    WHEN BP.severity = 'Medium' THEN 2\n    ELSE 1\n  END as ord\nFROM\n  (\n    SELECT\n      chk_name,\n      score,\n      chk_date\n    FROM\n      security_analysis.security_checks\n    where\n      run_id = (\n        select\n          max(runID)\n        from\n          security_analysis.run_number_table\n      )\n  ) SC,\n  security_analysis.security_best_practices BP\nWHERE\n  SC.chk_name = BP.chk_name\n  and BP.category = {{category}}\nORDER BY\n  Status DESC,\n  ord DESC",
+                        "query": "SELECT\n  check as Check,\n  BP.severity as Severity,\n  score as Status,\n  chk_date as RunDate,\n  concat(\n    '<a  href=\"',\n    BP.doc_url,\n    '\" target=\"_blank\" rel=\"noopener noreferrer\" title=\"remediation documentation\">',\n    BP.recommendation,\n    '</a>'\n  ) as Recommendation,\n  CASE\n    WHEN BP.severity = 'High' THEN 3\n    WHEN BP.severity = 'Medium' THEN 2\n    ELSE 1\n  END as ord,\n  workspaceid\nFROM\n  (\n    SELECT\n      chk_name,\n      score,\n      chk_date,\n      workspaceid\n    FROM\n      security_analysis.security_checks\n    where\n      run_id = (\n        select\n          max(runID)\n        from\n          security_analysis.run_number_table\n      )\n  ) SC,\n  security_analysis.security_best_practices BP\nWHERE\n  SC.chk_name = BP.chk_name\n  and BP.category = {{category}}\n  and workspaceid ={{workspaceid}}\nORDER BY\n  Status DESC,\n  ord DESC",
                         "run_as_role": "viewer",
                         "run_as_service_principal_id": null,
                         "schedule": null,
                         "tags": [
                             "SAT"
                         ],
-                        "updated_at": "2022-09-05T00:27:54Z",
+                        "updated_at": "2022-09-07T18:18:36Z",
                         "user_id": 6132399981223669,
                         "version": 1
                     },
                     "query_plan": null,
                     "type": "TABLE",
-                    "updated_at": "2022-08-11T19:47:09Z"
+                    "updated_at": "2022-09-07T17:53:31Z"
                 },
                 "width": 1
             }
         ]
     },
     "queries": [
+        {
+            "can_edit": true,
+            "created_at": "2022-09-06T21:37:44Z",
+            "data_source_id": "d5878969-c046-49d7-8734-f81281bef428",
+            "description": "",
+            "id": "07b9f7cc-acfd-4409-977d-b8f1e9527ca7",
+            "is_archived": false,
+            "is_draft": false,
+            "is_favorite": false,
+            "is_safe": true,
+            "job_id": null,
+            "last_modified_by": {
+                "email": "arun.pamulapati@databricks.com",
+                "id": 6132399981223669,
+                "is_db_admin": false,
+                "name": "arun.pamulapati@databricks.com",
+                "profile_image_url": "https://www.gravatar.com/avatar/14ec1a31bedbf1f5cdc8a243bf5bfb64?s=40&d=identicon"
+            },
+            "latest_query_data_id": "e5557098-f5c8-4fba-89f4-60cdb4dfd13e",
+            "name": "workspace_ids",
+            "options": {
+                "apply_auto_limit": true,
+                "catalog": "hive_metastore",
+                "parameters": [],
+                "schema": "security_analysis",
+                "visualization_control_order": []
+            },
+            "permission_tier": "CAN_MANAGE",
+            "query": "SELECT workspace_id FROM  security_analysis.account_workspaces WHERE analysis_enabled = true",
+            "query_draft": {
+                "apply_auto_limit": true,
+                "catalog": "hive_metastore",
+                "draft_text": "SELECT workspace_id FROM  security_analysis.account_workspaces WHERE analysis_enabled = true",
+                "org_id": 1657683783405196,
+                "original_query_text": "SELECT workspace_id FROM  security_analysis.account_workspaces",
+                "parameters": [],
+                "query_id": "07b9f7cc-acfd-4409-977d-b8f1e9527ca7",
+                "schema": "security_analysis",
+                "updated_at": "2022-09-07T17:57:03Z",
+                "user_id": 6132399981223669
+            },
+            "run_as_role": null,
+            "run_as_service_principal_id": null,
+            "schedule": null,
+            "tags": [
+                "SAT"
+            ],
+            "updated_at": "2022-09-07T20:17:58Z",
+            "user": {
+                "email": "arun.pamulapati@databricks.com",
+                "id": 6132399981223669,
+                "is_db_admin": false,
+                "name": "arun.pamulapati@databricks.com",
+                "profile_image_url": "https://www.gravatar.com/avatar/14ec1a31bedbf1f5cdc8a243bf5bfb64?s=40&d=identicon"
+            },
+            "user_id": 6132399981223669,
+            "version": 1,
+            "visualizations": [
+                {
+                    "created_at": "2022-09-06T21:37:45Z",
+                    "description": "",
+                    "id": "dcdad0f5-d800-4de1-bcc9-c67d26ad91d2",
+                    "name": "Table",
+                    "options": {
+                        "condensed": true,
+                        "version": 2,
+                        "withRowNumber": true
+                    },
+                    "query_plan": null,
+                    "type": "TABLE",
+                    "updated_at": "2022-09-07T17:45:32Z"
+                }
+            ]
+        },
         {
             "can_edit": true,
             "created_at": "2022-07-20T14:41:09Z",
@@ -4085,35 +4886,39 @@
                 "name": "arun.pamulapati@databricks.com",
                 "profile_image_url": "https://www.gravatar.com/avatar/14ec1a31bedbf1f5cdc8a243bf5bfb64?s=40&d=identicon"
             },
-            "latest_query_data_id": "dcc40222-0c50-4c81-b604-edc8ea3b23aa",
-            "name": "WS_Stats",
+            "latest_query_data_id": "a4d97155-251f-4649-abba-e09d66ba2217",
+            "name": "workspace_stats",
             "options": {
                 "apply_auto_limit": true,
-                "parameters": [],
+                "parameters": [
+                    {
+                        "$$value": "1657683783405196",
+                        "global": false,
+                        "locals": [],
+                        "name": "workspaceid",
+                        "parentQueryId": "fea54078-2986-4688-932e-17f2b8f7220c",
+                        "queryId": "07b9f7cc-acfd-4409-977d-b8f1e9527ca7",
+                        "title": "workspaceid",
+                        "type": "query",
+                        "urlPrefix": "p_",
+                        "value": "1657683783405196"
+                    }
+                ],
                 "run_as_role": "viewer",
-                "visualization_control_order": []
+                "visualization_control_order": [
+                    "workspaceid"
+                ]
             },
             "permission_tier": "CAN_MANAGE",
-            "query": "SELECT\n  name,\n  value.value\nFROM\n  security_analysis.account_info\nwhere\n  category = 'Workspace Stats'\n  and run_id = (\n    select\n      max(runID)\n    from\n      security_analysis.run_number_table\n  )\nORDER BY name",
-            "query_draft": {
-                "apply_auto_limit": true,
-                "catalog": "",
-                "draft_text": "SELECT\n  name,\n  value.value\nFROM\n  security_analysis.account_info\nwhere\n  category = 'Workspace Stats'\n  and run_id = (\n    select\n      max(runID)\n    from\n      security_analysis.run_number_table\n  )\nORDER BY name",
-                "org_id": 1657683783405196,
-                "original_query_text": "SELECT\n  name,\n  value.value,\n  max(check_time)\nFROM\n  security_analysis.account_info\nwhere\n  category = 'Workspace Stats'\n  and run_id = (\n    select\n      max(runID)\n    from\n      security_analysis.run_number_table\n  )\nGROUP BY\n  name,\n  value.value,\n  category",
-                "parameters": [],
-                "query_id": "fea54078-2986-4688-932e-17f2b8f7220c",
-                "schema": "",
-                "updated_at": "2022-08-09T18:41:11Z",
-                "user_id": 6132399981223669
-            },
+            "query": "SELECT\n  name,\n  value.value\nFROM\n  security_analysis.account_info\nwhere\n  category = 'Workspace Stats'\n  and run_id = (\n    select\n      max(runID)\n    from\n      security_analysis.run_number_table\n  )\n  and workspaceid ={{workspaceid}}\nORDER BY name",
+            "query_draft": null,
             "run_as_role": "viewer",
             "run_as_service_principal_id": null,
             "schedule": null,
             "tags": [
                 "SAT"
             ],
-            "updated_at": "2022-09-05T00:33:44Z",
+            "updated_at": "2022-09-07T20:11:52Z",
             "user": {
                 "email": "arun.pamulapati@databricks.com",
                 "id": 6132399981223669,
@@ -4303,13 +5108,13 @@
                 "name": "arun.pamulapati@databricks.com",
                 "profile_image_url": "https://www.gravatar.com/avatar/14ec1a31bedbf1f5cdc8a243bf5bfb64?s=40&d=identicon"
             },
-            "latest_query_data_id": "18086940-4895-4808-9a46-f93dfa3d5c9a",
-            "name": "Category Pillars",
+            "latest_query_data_id": "e68f9a53-6e52-4ce2-b790-463e9e6a7663",
+            "name": "category_pillars",
             "options": {
                 "apply_auto_limit": true,
                 "parameters": [
                     {
-                        "$$value": "Compliance",
+                        "$$value": "Workspace Settings",
                         "global": false,
                         "locals": [],
                         "name": "category",
@@ -4317,16 +5122,29 @@
                         "title": "category",
                         "type": "text",
                         "urlPrefix": "p_",
-                        "value": "Compliance"
+                        "value": "Workspace Settings"
+                    },
+                    {
+                        "$$value": "1657683783405196",
+                        "global": false,
+                        "locals": [],
+                        "name": "workspaceid",
+                        "parentQueryId": "b043e97c-a156-4d91-8a65-30bce3b1ad48",
+                        "queryId": "07b9f7cc-acfd-4409-977d-b8f1e9527ca7",
+                        "title": "workspaceid",
+                        "type": "query",
+                        "urlPrefix": "p_",
+                        "value": "1657683783405196"
                     }
                 ],
                 "run_as_role": "viewer",
                 "visualization_control_order": [
-                    "category"
+                    "category",
+                    "workspaceid"
                 ]
             },
             "permission_tier": "CAN_MANAGE",
-            "query": "SELECT\n  check as Check,\n  BP.severity as Severity,\n  score as Status,\n  chk_date as RunDate,\n  concat(\n    '<a  href=\"',\n    BP.doc_url,\n    '\" target=\"_blank\" rel=\"noopener noreferrer\" title=\"remediation documentation\">',\n    BP.recommendation,\n    '</a>'\n  ) as Recommendation,\n  CASE\n    WHEN BP.severity = 'High' THEN 3\n    WHEN BP.severity = 'Medium' THEN 2\n    ELSE 1\n  END as ord\nFROM\n  (\n    SELECT\n      chk_name,\n      score,\n      chk_date\n    FROM\n      security_analysis.security_checks\n    where\n      run_id = (\n        select\n          max(runID)\n        from\n          security_analysis.run_number_table\n      )\n  ) SC,\n  security_analysis.security_best_practices BP\nWHERE\n  SC.chk_name = BP.chk_name\n  and BP.category = {{category}}\nORDER BY\n  Status DESC,\n  ord DESC",
+            "query": "SELECT\n  check as Check,\n  BP.severity as Severity,\n  score as Status,\n  chk_date as RunDate,\n  concat(\n    '<a  href=\"',\n    BP.doc_url,\n    '\" target=\"_blank\" rel=\"noopener noreferrer\" title=\"remediation documentation\">',\n    BP.recommendation,\n    '</a>'\n  ) as Recommendation,\n  CASE\n    WHEN BP.severity = 'High' THEN 3\n    WHEN BP.severity = 'Medium' THEN 2\n    ELSE 1\n  END as ord,\n  workspaceid\nFROM\n  (\n    SELECT\n      chk_name,\n      score,\n      chk_date,\n      workspaceid\n    FROM\n      security_analysis.security_checks\n    where\n      run_id = (\n        select\n          max(runID)\n        from\n          security_analysis.run_number_table\n      )\n  ) SC,\n  security_analysis.security_best_practices BP\nWHERE\n  SC.chk_name = BP.chk_name\n  and BP.category = {{category}}\n  and workspaceid ={{workspaceid}}\nORDER BY\n  Status DESC,\n  ord DESC",
             "query_draft": null,
             "run_as_role": "viewer",
             "run_as_service_principal_id": null,
@@ -4334,7 +5152,7 @@
             "tags": [
                 "SAT"
             ],
-            "updated_at": "2022-09-05T00:27:54Z",
+            "updated_at": "2022-09-07T18:18:36Z",
             "user": {
                 "email": "arun.pamulapati@databricks.com",
                 "id": 6132399981223669,
@@ -4874,6 +5692,32 @@
                                 "type": "integer",
                                 "useMonospaceFont": false,
                                 "visible": false
+                            },
+                            {
+                                "alignContent": "left",
+                                "allowHTML": false,
+                                "allowSearch": false,
+                                "booleanValues": [
+                                    "false",
+                                    "true"
+                                ],
+                                "displayAs": "string",
+                                "highlightLinks": false,
+                                "imageHeight": "",
+                                "imageTitleTemplate": "{{ @ }}",
+                                "imageUrlTemplate": "{{ @ }}",
+                                "imageWidth": "",
+                                "linkOpenInNewTab": true,
+                                "linkTextTemplate": "{{ @ }}",
+                                "linkTitleTemplate": "{{ @ }}",
+                                "linkUrlTemplate": "{{ @ }}",
+                                "name": "workspaceid",
+                                "order": 100006,
+                                "preserveWhitespace": false,
+                                "title": "workspaceid",
+                                "type": "string",
+                                "useMonospaceFont": false,
+                                "visible": false
                             }
                         ],
                         "condensed": false,
@@ -4883,7 +5727,7 @@
                     },
                     "query_plan": null,
                     "type": "TABLE",
-                    "updated_at": "2022-08-11T19:47:09Z"
+                    "updated_at": "2022-09-07T17:53:31Z"
                 },
                 {
                     "created_at": "2022-07-20T14:41:17Z",
@@ -4962,13 +5806,26 @@
                 "name": "arun.pamulapati@databricks.com",
                 "profile_image_url": "https://www.gravatar.com/avatar/14ec1a31bedbf1f5cdc8a243bf5bfb64?s=40&d=identicon"
             },
-            "latest_query_data_id": "8f03dc53-2f30-4774-a0a5-38462c24946b",
-            "name": "Category Counters",
+            "latest_execution": {
+                "catalog": null,
+                "data_source_id": "d5878969-c046-49d7-8734-f81281bef428",
+                "error_message": "",
+                "id": "58a49412-27d8-4f23-bc37-f242c7aa3e0e",
+                "num_rows": 1,
+                "query_id": "6c11756d-132f-4727-92df-2a085ef2a204",
+                "query_text": "SELECT\n  count(*) as counter\nFROM\n  security_analysis.security_checks sc,\n  security_analysis.security_best_practices sbp\nwhere\n  sc.chk_name = sbp.chk_name\n  and sbp.severity = 'Low'\n  and sc.score = 1\n  and sbp.category = 'Workspace Settings'\n  and sc.workspaceid = 1657683783405196\n  and run_id = (\n    select\n      max(runID)\n    from\n      security_analysis.run_number_table\n  ) LIMIT 1000",
+                "runtime": 1.4878,
+                "schema": null,
+                "start_time": "2022-09-07T20:20:39",
+                "status": 3
+            },
+            "latest_query_data_id": "88913a72-b09d-42eb-82cf-a3031bce908d",
+            "name": "category_counters",
             "options": {
                 "apply_auto_limit": true,
                 "parameters": [
                     {
-                        "$$value": "High",
+                        "$$value": "Low",
                         "global": false,
                         "locals": [],
                         "name": "severity",
@@ -4976,7 +5833,7 @@
                         "title": "severity",
                         "type": "text",
                         "urlPrefix": "p_",
-                        "value": "High"
+                        "value": "Low"
                     },
                     {
                         "$$value": "Identity & Access",
@@ -4988,24 +5845,81 @@
                         "type": "text",
                         "urlPrefix": "p_",
                         "value": "Identity & Access"
+                    },
+                    {
+                        "$$value": "1657683783405196",
+                        "global": false,
+                        "locals": [],
+                        "name": "workspaceid",
+                        "queryId": "07b9f7cc-acfd-4409-977d-b8f1e9527ca7",
+                        "title": "Workspace",
+                        "type": "query",
+                        "urlPrefix": "p_",
+                        "value": "1657683783405196"
                     }
                 ],
                 "run_as_role": "viewer",
                 "visualization_control_order": [
                     "severity",
-                    "category"
+                    "category",
+                    "workspaceid"
                 ]
             },
             "permission_tier": "CAN_MANAGE",
-            "query": "SELECT\n  count(*) as counter\nFROM\n  security_analysis.security_checks sc,\n  security_analysis.security_best_practices sbp\nwhere\n  sc.chk_name = sbp.chk_name\n  and sbp.severity = {{severity}}\n  and sc.score = 1\n  and sbp.category = {{category}}\n  and run_id = (\n    select\n      max(runID)\n    from\n      security_analysis.run_number_table\n  )",
-            "query_draft": null,
+            "query": "SELECT\n  count(*) as counter\nFROM\n  security_analysis.security_checks sc,\n  security_analysis.security_best_practices sbp\nwhere\n  sc.chk_name = sbp.chk_name\n  and sbp.severity = {{severity}}\n  and sc.score = 1\n  and sbp.category = {{category}}\n  and sc.workspaceid = {{workspaceid}}\n  and run_id = (\n    select\n      max(runID)\n    from\n      security_analysis.run_number_table\n  )",
+            "query_draft": {
+                "apply_auto_limit": true,
+                "catalog": "",
+                "draft_text": "SELECT\n  count(*) as counter\nFROM\n  security_analysis.security_checks sc,\n  security_analysis.security_best_practices sbp\nwhere\n  sc.chk_name = sbp.chk_name\n  and sbp.severity = {{severity}}\n  and sc.score = 1\n  and sbp.category = {{category}}\n  and sc.workspaceid = {{workspaceid}}\n  and run_id = (\n    select\n      max(runID)\n    from\n      security_analysis.run_number_table\n  )",
+                "org_id": 1657683783405196,
+                "original_query_text": "SELECT\n  count(*) as counter\nFROM\n  security_analysis.security_checks sc,\n  security_analysis.security_best_practices sbp\nwhere\n  sc.chk_name = sbp.chk_name\n  and sbp.severity = {{severity}}\n  and sc.score = 1\n  and sbp.category = {{category}}\n  and run_id = (\n    select\n      max(runID)\n    from\n      security_analysis.run_number_table\n  )",
+                "parameters": [
+                    {
+                        "$$value": "Low",
+                        "global": false,
+                        "locals": [],
+                        "name": "severity",
+                        "parentQueryId": "6c11756d-132f-4727-92df-2a085ef2a204",
+                        "title": "severity",
+                        "type": "text",
+                        "urlPrefix": "p_",
+                        "value": "Low"
+                    },
+                    {
+                        "$$value": "Identity & Access",
+                        "global": false,
+                        "locals": [],
+                        "name": "category",
+                        "parentQueryId": "6c11756d-132f-4727-92df-2a085ef2a204",
+                        "title": "category",
+                        "type": "text",
+                        "urlPrefix": "p_",
+                        "value": "Identity & Access"
+                    },
+                    {
+                        "$$value": "1657683783405196",
+                        "global": false,
+                        "locals": [],
+                        "name": "workspaceid",
+                        "queryId": "07b9f7cc-acfd-4409-977d-b8f1e9527ca7",
+                        "title": "Workspace",
+                        "type": "query",
+                        "urlPrefix": "p_",
+                        "value": "1657683783405196"
+                    }
+                ],
+                "query_id": "6c11756d-132f-4727-92df-2a085ef2a204",
+                "schema": "",
+                "updated_at": "2022-09-07T18:47:06Z",
+                "user_id": 6132399981223669
+            },
             "run_as_role": "viewer",
             "run_as_service_principal_id": null,
             "schedule": null,
             "tags": [
                 "SAT"
             ],
-            "updated_at": "2022-09-05T00:23:34Z",
+            "updated_at": "2022-09-07T18:47:11Z",
             "user": {
                 "email": "arun.pamulapati@databricks.com",
                 "id": 6132399981223669,
@@ -5079,35 +5993,39 @@
                 "name": "arun.pamulapati@databricks.com",
                 "profile_image_url": "https://www.gravatar.com/avatar/14ec1a31bedbf1f5cdc8a243bf5bfb64?s=40&d=identicon"
             },
-            "latest_query_data_id": "8c759236-356a-410b-ac7b-85f517758250",
-            "name": "Account_Stats",
+            "latest_query_data_id": "5eea0b3f-826f-4fb0-9db1-92ffee326b7f",
+            "name": "account_stats",
             "options": {
                 "apply_auto_limit": true,
-                "parameters": [],
+                "parameters": [
+                    {
+                        "$$value": "1657683783405196",
+                        "global": false,
+                        "locals": [],
+                        "name": "workspaceid",
+                        "parentQueryId": "c7112a9d-0dac-4f3e-94a6-95d9b9716653",
+                        "queryId": "07b9f7cc-acfd-4409-977d-b8f1e9527ca7",
+                        "title": "workspaceid",
+                        "type": "query",
+                        "urlPrefix": "p_",
+                        "value": "1657683783405196"
+                    }
+                ],
                 "run_as_role": "viewer",
-                "visualization_control_order": []
+                "visualization_control_order": [
+                    "workspaceid"
+                ]
             },
             "permission_tier": "CAN_MANAGE",
-            "query": "SELECT\n  name,\n  value.value\nFROM\n  security_analysis.account_info\nwhere\n  category = 'Account Stats'\n  and run_id = (\n    select\n      max(runID)\n    from\n      security_analysis.run_number_table\n  )\nORDER BY name",
-            "query_draft": {
-                "apply_auto_limit": true,
-                "catalog": "",
-                "draft_text": "SELECT\n  name,\n  value.value\nFROM\n  security_analysis.account_info\nwhere\n  category = 'Account Stats'\n  and run_id = (\n    select\n      max(runID)\n    from\n      security_analysis.run_number_table\n  )\nORDER BY name",
-                "org_id": 1657683783405196,
-                "original_query_text": "SELECT\n  name,\n  value.value,\n  max(check_time)\nFROM\n  security_analysis.account_info\nwhere\n  category = 'Account Stats'\n  and run_id = (\n    select\n      max(runID)\n    from\n      security_analysis.run_number_table\n  )\nGROUP BY\n  name,\n  value.value,\n  category",
-                "parameters": [],
-                "query_id": "c7112a9d-0dac-4f3e-94a6-95d9b9716653",
-                "schema": "",
-                "updated_at": "2022-08-09T20:24:30Z",
-                "user_id": 6132399981223669
-            },
+            "query": "SELECT\n  name,\n  value.value\nFROM\n  security_analysis.account_info\nwhere\n  category = 'Account Stats'\n  and run_id = (\n    select\n      max(runID)\n    from\n      security_analysis.run_number_table\n  )\n  and workspaceid = {{workspaceid}}\nORDER BY name",
+            "query_draft": null,
             "run_as_role": "viewer",
             "run_as_service_principal_id": null,
             "schedule": null,
             "tags": [
                 "SAT"
             ],
-            "updated_at": "2022-09-05T00:29:36Z",
+            "updated_at": "2022-09-07T20:07:58Z",
             "user": {
                 "email": "arun.pamulapati@databricks.com",
                 "id": 6132399981223669,
@@ -5694,36 +6612,53 @@
                 "name": "arun.pamulapati@databricks.com",
                 "profile_image_url": "https://www.gravatar.com/avatar/14ec1a31bedbf1f5cdc8a243bf5bfb64?s=40&d=identicon"
             },
-            "latest_query_data_id": "8b7d8270-f4d1-4c1d-9784-30ba7713ffdd",
-            "name": "SummaryStats",
+            "latest_execution": {
+                "catalog": null,
+                "data_source_id": "d5878969-c046-49d7-8734-f81281bef428",
+                "error_message": "",
+                "id": "30f2fc0b-18b2-426a-826a-2aa635740c8c",
+                "num_rows": 8,
+                "query_id": "fdc33af2-0921-4fed-b320-08ed92eb4c18",
+                "query_text": "Select\n  concat(\n    results.category,\n    ' (Out of ',\n    category_count,\n    ')'\n  ) as category,\n  severity,\n  severity_count,\n  ord\nFROM\n  (\n    SELECT\n      sbp.category,\n      sbp.severity,\n      count(sbp.severity) severity_count,\n      CASE\n        WHEN sbp.severity = 'High' THEN 3\n        WHEN sbp.severity = 'Medium' THEN 2\n        ELSE 1\n      END as ord\n    FROM\n      security_analysis.security_checks sc,\n      security_analysis.security_best_practices sbp\n    where\n      score = 1\n      and sc.chk_name = sbp.chk_name\n      and run_id = (\n        select\n          max(runID)\n        from\n          security_analysis.run_number_table\n      )\n      and category not IN ('Workspace Settings', 'Workspace Stats')\n      and workspaceid=1657683783405196\n    group by\n      sbp.category,\n      sbp.severity\n  ) as results,\n  (\n    SELECT\n      category,\n      count(*) as category_count\n    FROM\n      security_analysis.security_best_practices\n    WHERE\n      category not IN ('Workspace Settings', 'Workspace Stats')\n    group by\n      category\n  ) as master\nwhere\n  results.category = master.category LIMIT 1000\n  ",
+                "runtime": 2.03786,
+                "schema": "security_analysis",
+                "start_time": "2022-09-07T18:42:10",
+                "status": 3
+            },
+            "latest_query_data_id": "30f2fc0b-18b2-426a-826a-2aa635740c8c",
+            "name": "summary_stats",
             "options": {
                 "apply_auto_limit": true,
-                "parameters": [],
+                "parameters": [
+                    {
+                        "$$value": "1657683783405196",
+                        "global": false,
+                        "locals": [],
+                        "name": "workspaceid",
+                        "parentQueryId": "fdc33af2-0921-4fed-b320-08ed92eb4c18",
+                        "queryId": "07b9f7cc-acfd-4409-977d-b8f1e9527ca7",
+                        "title": "Workspace",
+                        "type": "query",
+                        "urlPrefix": "p_",
+                        "value": "1657683783405196"
+                    }
+                ],
                 "run_as_role": "viewer",
                 "schema": "security_analysis",
-                "visualization_control_order": []
+                "visualization_control_order": [
+                    "workspaceid"
+                ]
             },
             "permission_tier": "CAN_MANAGE",
-            "query": "Select\n  concat(\n    results.category,\n    ' (Out of ',\n    category_count,\n    ')'\n  ) as category,\n  severity,\n  severity_count,\n  ord\nFROM\n  (\n    SELECT\n      sbp.category,\n      sbp.severity,\n      count(sbp.severity) severity_count,\n      CASE\n        WHEN sbp.severity = 'High' THEN 3\n        WHEN sbp.severity = 'Medium' THEN 2\n        ELSE 1\n      END as ord\n    FROM\n      security_analysis.security_checks sc,\n      security_analysis.security_best_practices sbp\n    where\n      score = 1\n      and sc.chk_name = sbp.chk_name\n      and run_id = (\n        select\n          max(runID)\n        from\n          security_analysis.run_number_table\n      )\n      and category not IN ('Workspace Settings', 'Workspace Stats')\n    group by\n      sbp.category,\n      sbp.severity\n  ) as results,\n  (\n    SELECT\n      category,\n      count(*) as category_count\n    FROM\n      security_analysis.security_best_practices\n    WHERE\n      category not IN ('Workspace Settings', 'Workspace Stats')\n    group by\n      category\n  ) as master\nwhere\n  results.category = master.category\n  ",
-            "query_draft": {
-                "apply_auto_limit": true,
-                "catalog": "",
-                "draft_text": "Select\n  concat(\n    results.category,\n    ' (Out of ',\n    category_count,\n    ')'\n  ) as category,\n  severity,\n  severity_count,\n  ord\nFROM\n  (\n    SELECT\n      sbp.category,\n      sbp.severity,\n      count(sbp.severity) severity_count,\n      CASE\n        WHEN sbp.severity = 'High' THEN 3\n        WHEN sbp.severity = 'Medium' THEN 2\n        ELSE 1\n      END as ord\n    FROM\n      security_analysis.security_checks sc,\n      security_analysis.security_best_practices sbp\n    where\n      score = 1\n      and sc.chk_name = sbp.chk_name\n      and run_id = (\n        select\n          max(runID)\n        from\n          security_analysis.run_number_table\n      )\n      and category not IN ('Workspace Settings', 'Workspace Stats')\n    group by\n      sbp.category,\n      sbp.severity\n  ) as results,\n  (\n    SELECT\n      category,\n      count(*) as category_count\n    FROM\n      security_analysis.security_best_practices\n    WHERE\n      category not IN ('Workspace Settings', 'Workspace Stats')\n    group by\n      category\n  ) as master\nwhere\n  results.category = master.category\n  ",
-                "org_id": 1657683783405196,
-                "original_query_text": "Select\n  concat(\n    results.category,\n    ' (Out of ',\n    category_count,\n    ')'\n  ) as category,\n  severity,\n  severity_count,\n  ord\nFROM\n  (\n    SELECT\n      sbp.category,\n      sbp.severity,\n      count(sbp.severity) severity_count,\n      CASE\n        WHEN sbp.severity = 'High' THEN 3\n        WHEN sbp.severity = 'Medium' THEN 2\n        ELSE 1\n      END as ord\n    FROM\n      security_analysis.security_checks sc,\n      security_analysis.security_best_practices sbp\n    where\n      score = 1\n      and sc.chk_name = sbp.chk_name\n      and run_id = (\n        select\n          max(runID)\n        from\n          security_analysis.run_number_table\n      )\n      and category not IN ('Workspace Settings', 'Workspace Stats')\n    group by\n      sbp.category,\n      sbp.severity\n  ) as results,\n  (\n    SELECT\n      category,\n      count(*) as category_count\n    FROM\n      security_analysis.security_best_practices\n    WHERE\n      category not IN ('Workspace Settings', 'Workspace Stats')\n    group by\n      category\n  ) as master\nwhere\n  results.category = master.category",
-                "parameters": [],
-                "query_id": "fdc33af2-0921-4fed-b320-08ed92eb4c18",
-                "schema": "security_analysis",
-                "updated_at": "2022-08-11T19:45:09Z",
-                "user_id": 6132399981223669
-            },
+            "query": "Select\n  concat(\n    results.category,\n    ' (Out of ',\n    category_count,\n    ')'\n  ) as category,\n  severity,\n  severity_count,\n  ord\nFROM\n  (\n    SELECT\n      sbp.category,\n      sbp.severity,\n      count(sbp.severity) severity_count,\n      CASE\n        WHEN sbp.severity = 'High' THEN 3\n        WHEN sbp.severity = 'Medium' THEN 2\n        ELSE 1\n      END as ord\n    FROM\n      security_analysis.security_checks sc,\n      security_analysis.security_best_practices sbp\n    where\n      score = 1\n      and sc.chk_name = sbp.chk_name\n      and run_id = (\n        select\n          max(runID)\n        from\n          security_analysis.run_number_table\n      )\n      and category not IN ('Workspace Settings', 'Workspace Stats')\n      and workspaceid={{workspaceid}}\n    group by\n      sbp.category,\n      sbp.severity\n  ) as results,\n  (\n    SELECT\n      category,\n      count(*) as category_count\n    FROM\n      security_analysis.security_best_practices\n    WHERE\n      category not IN ('Workspace Settings', 'Workspace Stats')\n    group by\n      category\n  ) as master\nwhere\n  results.category = master.category\n  ",
+            "query_draft": null,
             "run_as_role": "viewer",
             "run_as_service_principal_id": null,
             "schedule": null,
             "tags": [
                 "SAT"
             ],
-            "updated_at": "2022-09-06T16:52:15Z",
+            "updated_at": "2022-09-07T18:42:07Z",
             "user": {
                 "email": "arun.pamulapati@databricks.com",
                 "id": 6132399981223669,
